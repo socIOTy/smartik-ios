@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ArtikCloudSwift3
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        return true
+    }
+    
+    func application(_ application: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
+        
+        let callbackUrl = url.absoluteString.replacingOccurrences(of: "#", with: "?")
+        
+        let urlComponents = URLComponents(url: URL(string: callbackUrl)!, resolvingAgainstBaseURL: false)
+        
+        if let queryParams = urlComponents?.queryItems {
+            
+            for param in queryParams {
+                
+                NSLog(">>params: \(param.name) = \(param.value)")
+                Authentification.credentials[param.name] = param.value
+            }
+        }
+        
+        
+        ArtikCloudAPI.customHeaders["Authorization"] = "bearer " + Authentification.credentials["access_token"]!
+        
+        // NSNotificationCenter.defaultCenter().postNotificationName("notifytest", object: "hello")
+        
+        
         return true
     }
 

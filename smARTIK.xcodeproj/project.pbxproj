@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E7F65D43A83ABE0DA873154 /* Pods_smARTIK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BA0F84439AF49AD68FECA16 /* Pods_smARTIK.framework */; };
+		F235B3961E529D6000E055A3 /* Authentification.swift in Sources */ = {isa = PBXBuildFile; fileRef = F235B3941E529D6000E055A3 /* Authentification.swift */; };
+		F235B3971E529D6000E055A3 /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = F235B3951E529D6000E055A3 /* Metadata.swift */; };
 		F26CCE5D1E46756B00121D10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26CCE5C1E46756B00121D10 /* AppDelegate.swift */; };
 		F26CCE5F1E46756B00121D10 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26CCE5E1E46756B00121D10 /* ViewController.swift */; };
 		F26CCE621E46756B00121D10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F26CCE601E46756B00121D10 /* Main.storyboard */; };
@@ -15,6 +18,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1BA0F84439AF49AD68FECA16 /* Pods_smARTIK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_smARTIK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B42631C14A0A1E68EC13BE45 /* Pods-smARTIK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smARTIK.release.xcconfig"; path = "Pods/Target Support Files/Pods-smARTIK/Pods-smARTIK.release.xcconfig"; sourceTree = "<group>"; };
+		B76F75F393F7A0400AA74FA5 /* Pods-smARTIK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smARTIK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-smARTIK/Pods-smARTIK.debug.xcconfig"; sourceTree = "<group>"; };
+		F235B3941E529D6000E055A3 /* Authentification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authentification.swift; sourceTree = "<group>"; };
+		F235B3951E529D6000E055A3 /* Metadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
 		F26CCE591E46756B00121D10 /* smARTIK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smARTIK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F26CCE5C1E46756B00121D10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F26CCE5E1E46756B00121D10 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E7F65D43A83ABE0DA873154 /* Pods_smARTIK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		349F8F21B6940669F1E4F87F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1BA0F84439AF49AD68FECA16 /* Pods_smARTIK.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3BEBAE48E25908AEFACC6CA0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B76F75F393F7A0400AA74FA5 /* Pods-smARTIK.debug.xcconfig */,
+				B42631C14A0A1E68EC13BE45 /* Pods-smARTIK.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F26CCE501E46756A00121D10 = {
 			isa = PBXGroup;
 			children = (
 				F26CCE5B1E46756B00121D10 /* smARTIK */,
 				F26CCE5A1E46756B00121D10 /* Products */,
+				3BEBAE48E25908AEFACC6CA0 /* Pods */,
+				349F8F21B6940669F1E4F87F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +86,8 @@
 				F26CCE5E1E46756B00121D10 /* ViewController.swift */,
 				F26CCE601E46756B00121D10 /* Main.storyboard */,
 				F26CCE631E46756B00121D10 /* Assets.xcassets */,
+				F235B3941E529D6000E055A3 /* Authentification.swift */,
+				F235B3951E529D6000E055A3 /* Metadata.swift */,
 				F26CCE651E46756B00121D10 /* LaunchScreen.storyboard */,
 				F26CCE681E46756B00121D10 /* Info.plist */,
 			);
@@ -71,9 +101,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F26CCE6B1E46756B00121D10 /* Build configuration list for PBXNativeTarget "smARTIK" */;
 			buildPhases = (
+				83CF5E3494B7541A831493A7 /* [CP] Check Pods Manifest.lock */,
 				F26CCE551E46756B00121D10 /* Sources */,
 				F26CCE561E46756B00121D10 /* Frameworks */,
 				F26CCE571E46756B00121D10 /* Resources */,
+				4CFCEDC612D9C97D71370B7F /* [CP] Embed Pods Frameworks */,
+				3996EE723E6FD16D768E3910 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -132,12 +165,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3996EE723E6FD16D768E3910 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-smARTIK/Pods-smARTIK-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4CFCEDC612D9C97D71370B7F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-smARTIK/Pods-smARTIK-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83CF5E3494B7541A831493A7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F26CCE551E46756B00121D10 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F26CCE5F1E46756B00121D10 /* ViewController.swift in Sources */,
+				F235B3961E529D6000E055A3 /* Authentification.swift in Sources */,
+				F235B3971E529D6000E055A3 /* Metadata.swift in Sources */,
 				F26CCE5D1E46756B00121D10 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,6 +342,7 @@
 		};
 		F26CCE6C1E46756B00121D10 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B76F75F393F7A0400AA74FA5 /* Pods-smARTIK.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2BULHRS882;
@@ -272,6 +356,7 @@
 		};
 		F26CCE6D1E46756B00121D10 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B42631C14A0A1E68EC13BE45 /* Pods-smARTIK.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2BULHRS882;
@@ -302,6 +387,7 @@
 				F26CCE6D1E46756B00121D10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
