@@ -33,13 +33,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 NSLog(">>params: \(param.name) = \(param.value)")
                 Authentification.credentials[param.name] = param.value
             }
+            
         }
         
-        
+
         ArtikCloudAPI.customHeaders["Authorization"] = "bearer " + Authentification.credentials["access_token"]!
         
         // NSNotificationCenter.defaultCenter().postNotificationName("notifytest", object: "hello")
-        
         
         return true
     }

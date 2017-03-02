@@ -9,7 +9,7 @@
 import UIKit
 import ArtikCloudSwift3
 
-class ViewController: UIViewController {
+class LightBulbVC: UIViewController {
     
     @IBOutlet weak var statulLbl: UILabel!
     
@@ -28,8 +28,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var colorView: UIView!
     
     
+    @IBOutlet weak var colorTitle: UILabel!
+    @IBOutlet weak var rColorTitle: UILabel!
+    @IBOutlet weak var gColorTitle: UILabel!
+    @IBOutlet weak var bColorTitle: UILabel!
+    
+    @IBOutlet weak var switchBulb: UISwitch!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if (switchBulb.isOn) {
+            setOn()
+        } else {
+            setOff()
+        }
         
         let intensityLevel = Int(round(intensitySlider.value))
         let rColor = Int(round(rColorSlider.value))
@@ -56,14 +69,17 @@ class ViewController: UIViewController {
         let action = Action()
         if sender.isOn {
             action.name = "setOn"
+            setOn()
         } else {
             action.name = "setOff"
+            setOff()
         }
         
         actionArray.actions = []
         actionArray.actions!.append(action)
         actions.data = actionArray
         actions.ddid = Metadata.deviceID
+        
         
         MessagesAPI.sendActions(data: actions).then {
             response -> Void in
@@ -150,6 +166,49 @@ class ViewController: UIViewController {
             }.catch{error -> Void in
                 print(String(format: "%s", String(describing: error)))
         }
+    }
+    
+    func setOff() {
+        self.statulLbl.isHidden = true
+        
+        self.intensityLabel.isHidden = true
+        self.rColorLabel.isHidden = true
+        self.gColorLabel.isHidden = true
+        self.bColorLabel.isHidden = true
+        
+        self.intensitySlider.isHidden = true
+        self.rColorSlider.isHidden = true
+        self.gColorSlider.isHidden = true
+        self.bColorSlider.isHidden = true
+        
+        self.colorView.isHidden = true
+        
+        self.colorTitle.isHidden = true
+        self.rColorTitle.isHidden = true
+        self.gColorTitle.isHidden = true
+        self.bColorTitle.isHidden = true
+    }
+    
+    func setOn() {
+        self.statulLbl.isHidden = false
+        
+        self.intensityLabel.isHidden = false
+        self.rColorLabel.isHidden = false
+        self.gColorLabel.isHidden = false
+        self.bColorLabel.isHidden = false
+        
+        self.intensitySlider.isHidden = false
+        self.rColorSlider.isHidden = false
+        self.gColorSlider.isHidden = false
+        self.bColorSlider.isHidden = false
+        
+        self.colorView.isHidden = false
+        
+        self.colorTitle.isHidden = false
+        self.rColorTitle.isHidden = false
+        self.gColorTitle.isHidden = false
+        self.bColorTitle.isHidden = false
+
     }
     
     

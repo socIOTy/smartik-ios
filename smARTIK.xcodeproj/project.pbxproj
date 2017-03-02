@@ -8,28 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		8E7F65D43A83ABE0DA873154 /* Pods_smARTIK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BA0F84439AF49AD68FECA16 /* Pods_smARTIK.framework */; };
+		F200CA6B1E63DF4100352324 /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F200CA6A1E63DF4100352324 /* ListVC.swift */; };
+		F21E51AB1E68E20A00407CD5 /* DeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21E51AA1E68E20A00407CD5 /* DeviceCell.swift */; };
 		F235B3961E529D6000E055A3 /* Authentification.swift in Sources */ = {isa = PBXBuildFile; fileRef = F235B3941E529D6000E055A3 /* Authentification.swift */; };
 		F235B3971E529D6000E055A3 /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = F235B3951E529D6000E055A3 /* Metadata.swift */; };
 		F26CCE5D1E46756B00121D10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26CCE5C1E46756B00121D10 /* AppDelegate.swift */; };
-		F26CCE5F1E46756B00121D10 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26CCE5E1E46756B00121D10 /* ViewController.swift */; };
+		F26CCE5F1E46756B00121D10 /* LightBulbVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26CCE5E1E46756B00121D10 /* LightBulbVC.swift */; };
 		F26CCE621E46756B00121D10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F26CCE601E46756B00121D10 /* Main.storyboard */; };
 		F26CCE641E46756B00121D10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F26CCE631E46756B00121D10 /* Assets.xcassets */; };
 		F26CCE671E46756B00121D10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F26CCE651E46756B00121D10 /* LaunchScreen.storyboard */; };
+		F2E2030A1E63DB3400E720F1 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E203091E63DB3400E720F1 /* LoginVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1BA0F84439AF49AD68FECA16 /* Pods_smARTIK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_smARTIK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B42631C14A0A1E68EC13BE45 /* Pods-smARTIK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smARTIK.release.xcconfig"; path = "Pods/Target Support Files/Pods-smARTIK/Pods-smARTIK.release.xcconfig"; sourceTree = "<group>"; };
 		B76F75F393F7A0400AA74FA5 /* Pods-smARTIK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smARTIK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-smARTIK/Pods-smARTIK.debug.xcconfig"; sourceTree = "<group>"; };
+		F200CA6A1E63DF4100352324 /* ListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
+		F21E51AA1E68E20A00407CD5 /* DeviceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceCell.swift; sourceTree = "<group>"; };
 		F235B3941E529D6000E055A3 /* Authentification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authentification.swift; sourceTree = "<group>"; };
 		F235B3951E529D6000E055A3 /* Metadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
 		F26CCE591E46756B00121D10 /* smARTIK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smARTIK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F26CCE5C1E46756B00121D10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F26CCE5E1E46756B00121D10 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F26CCE5E1E46756B00121D10 /* LightBulbVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightBulbVC.swift; sourceTree = "<group>"; };
 		F26CCE611E46756B00121D10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F26CCE631E46756B00121D10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F26CCE661E46756B00121D10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F26CCE681E46756B00121D10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2E203091E63DB3400E720F1 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,13 +89,16 @@
 			isa = PBXGroup;
 			children = (
 				F26CCE5C1E46756B00121D10 /* AppDelegate.swift */,
-				F26CCE5E1E46756B00121D10 /* ViewController.swift */,
+				F26CCE5E1E46756B00121D10 /* LightBulbVC.swift */,
 				F26CCE601E46756B00121D10 /* Main.storyboard */,
 				F26CCE631E46756B00121D10 /* Assets.xcassets */,
 				F235B3941E529D6000E055A3 /* Authentification.swift */,
 				F235B3951E529D6000E055A3 /* Metadata.swift */,
 				F26CCE651E46756B00121D10 /* LaunchScreen.storyboard */,
 				F26CCE681E46756B00121D10 /* Info.plist */,
+				F2E203091E63DB3400E720F1 /* LoginVC.swift */,
+				F200CA6A1E63DF4100352324 /* ListVC.swift */,
+				F21E51AA1E68E20A00407CD5 /* DeviceCell.swift */,
 			);
 			path = smARTIK;
 			sourceTree = "<group>";
@@ -218,10 +227,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F26CCE5F1E46756B00121D10 /* ViewController.swift in Sources */,
+				F200CA6B1E63DF4100352324 /* ListVC.swift in Sources */,
+				F26CCE5F1E46756B00121D10 /* LightBulbVC.swift in Sources */,
 				F235B3961E529D6000E055A3 /* Authentification.swift in Sources */,
+				F21E51AB1E68E20A00407CD5 /* DeviceCell.swift in Sources */,
 				F235B3971E529D6000E055A3 /* Metadata.swift in Sources */,
 				F26CCE5D1E46756B00121D10 /* AppDelegate.swift in Sources */,
+				F2E2030A1E63DB3400E720F1 /* LoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

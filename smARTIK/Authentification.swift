@@ -19,7 +19,6 @@ class Authentification {
     
     static func artikCloudLogin() {
         
-        //UIApplication.shared.openURL(URL(string: authPath)!)
         UIApplication.shared.open((URL(string: authPath)!), options: [:], completionHandler: nil)
         
     }
