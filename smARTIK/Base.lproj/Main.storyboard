@@ -113,6 +113,7 @@
                     <navigationItem key="navigationItem" id="Otx-Oh-ucq"/>
                     <connections>
                         <outlet property="tableView" destination="cfi-jR-ucH" id="5UK-Gm-MK9"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="LightBulbVC" id="NGE-ra-g9Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YgI-ga-wLq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -339,7 +340,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1966" y="123"/>
+            <point key="canvasLocation" x="1609" y="-321"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Fsg-So-21Q">

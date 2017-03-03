@@ -47,5 +47,18 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let device = deviceList[indexPath.row]
+        performSegue(withIdentifier: Metadata.deviceTypes[device.dtid!]!, sender: device)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? LightBulbVC {
+            if let device = sender as? Device {
+                destination.device = device
+            }
+        }
+    }
 
 }

@@ -35,6 +35,17 @@ class LightBulbVC: UIViewController {
     
     @IBOutlet weak var switchBulb: UISwitch!
     
+    private var _device: Device!
+    
+    var device : Device {
+        get {
+            return _device
+        }
+        set {
+            _device = newValue
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -78,7 +89,7 @@ class LightBulbVC: UIViewController {
         actionArray.actions = []
         actionArray.actions!.append(action)
         actions.data = actionArray
-        actions.ddid = Metadata.deviceID
+        actions.ddid = device.id
         
         
         MessagesAPI.sendActions(data: actions).then {
@@ -135,7 +146,7 @@ class LightBulbVC: UIViewController {
         actionArray.actions = []
         actionArray.actions!.append(action)
         actions.data = actionArray
-        actions.ddid = Metadata.deviceID
+        actions.ddid = device.id
         
         MessagesAPI.sendActions(data: actions).then {
             response -> Void in
@@ -158,7 +169,7 @@ class LightBulbVC: UIViewController {
         actionArray.actions = []
         actionArray.actions!.append(action)
         actions.data = actionArray
-        actions.ddid = Metadata.deviceID
+        actions.ddid = device.id
         
         MessagesAPI.sendActions(data: actions).then {
             response -> Void in
