@@ -27,32 +27,49 @@
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uz0-hl-mm8">
-                                <rect key="frame" x="124.5" y="308.5" width="125" height="50"/>
-                                <color key="backgroundColor" red="0.10980392160000001" green="0.2156862745" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="37" y="391" width="300" height="75"/>
+                                <color key="backgroundColor" red="0.99607843137254903" green="0.99607843137254903" blue="0.99607843137254903" alpha="0.85482662671232879" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="8PD-Zs-tAg"/>
-                                    <constraint firstAttribute="width" constant="125" id="BkC-q4-eRK"/>
+                                    <constraint firstAttribute="height" constant="75" id="8PD-Zs-tAg"/>
+                                    <constraint firstAttribute="width" constant="300" id="BkC-q4-eRK"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
                                 <state key="normal" title="Login">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundedButton" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="loginPressed:" destination="XVt-Hm-PKz" eventType="touchUpInside" id="omq-d0-Qf2"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="zfp-LW-rcG">
+                                <rect key="frame" x="52" y="61" width="270" height="270"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="270" id="6z8-2n-WcZ"/>
+                                    <constraint firstAttribute="width" constant="270" id="txB-Ug-KDB"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="OTS-GN-zFg" firstAttribute="top" secondItem="MQd-nJ-5Pz" secondAttribute="bottom" id="7c9-Ph-b4L"/>
+                            <constraint firstItem="Uz0-hl-mm8" firstAttribute="top" secondItem="zfp-LW-rcG" secondAttribute="bottom" constant="60" id="D0f-xZ-Pmr"/>
                             <constraint firstItem="MQd-nJ-5Pz" firstAttribute="top" secondItem="Xz5-as-knW" secondAttribute="top" id="ErH-Vj-QgT"/>
-                            <constraint firstItem="Uz0-hl-mm8" firstAttribute="centerX" secondItem="Xz5-as-knW" secondAttribute="centerX" id="O0c-YC-6eB"/>
+                            <constraint firstItem="Uz0-hl-mm8" firstAttribute="centerX" secondItem="Xz5-as-knW" secondAttribute="centerX" id="Mc0-Vy-FB6"/>
                             <constraint firstAttribute="trailing" secondItem="MQd-nJ-5Pz" secondAttribute="trailing" id="R3L-Si-Oea"/>
-                            <constraint firstItem="Uz0-hl-mm8" firstAttribute="centerY" secondItem="Xz5-as-knW" secondAttribute="centerY" id="W5P-Sz-jyW"/>
                             <constraint firstItem="MQd-nJ-5Pz" firstAttribute="leading" secondItem="Xz5-as-knW" secondAttribute="leading" id="aQK-ZL-JUe"/>
+                            <constraint firstItem="zfp-LW-rcG" firstAttribute="centerX" secondItem="Xz5-as-knW" secondAttribute="centerX" id="k0Y-RE-cUm"/>
+                            <constraint firstItem="zfp-LW-rcG" firstAttribute="top" secondItem="U7F-Gt-EWl" secondAttribute="bottom" constant="41" id="znD-3M-S2W"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="loginBtn" destination="Uz0-hl-mm8" id="iuo-yL-47I"/>
+                        <outlet property="logoImg" destination="zfp-LW-rcG" id="n51-cq-9Vb"/>
                         <outlet property="webView" destination="MQd-nJ-5Pz" id="aDd-u8-eAJ"/>
                         <segue destination="A0h-1f-fr5" kind="show" identifier="ListVC" id="nY7-1w-OuB"/>
                     </connections>
@@ -61,7 +78,7 @@
             </objects>
             <point key="canvasLocation" x="-1229.5999999999999" y="122.78860569715144"/>
         </scene>
-        <!--ListVC-->
+        <!--Device List-->
         <scene sceneID="WvE-Ed-x5n">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="ubG-VU-qRM" customClass="ListVC" customModule="smARTIK" customModuleProvider="target" sceneMemberID="viewController">
@@ -73,20 +90,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="76" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cfi-jR-ucH">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="76" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cfi-jR-ucH">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DeviceCell" rowHeight="76" id="FfA-Ko-vJL" customClass="DeviceCell" customModule="smARTIK" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DeviceCell" rowHeight="76" id="FfA-Ko-vJL" customClass="DeviceCell" customModule="smARTIK" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="76"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FfA-Ko-vJL" id="eKx-PE-lrU">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="75.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="76"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fww-iS-j3U">
-                                                    <rect key="frame" x="23" y="8" width="329" height="59"/>
+                                                    <rect key="frame" x="23" y="8" width="329" height="60"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -109,7 +126,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Otx-Oh-ucq"/>
+                    <navigationItem key="navigationItem" title="Device List" id="Otx-Oh-ucq"/>
                     <connections>
                         <outlet property="tableView" destination="cfi-jR-ucH" id="5UK-Gm-MK9"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="LightBulbVC" id="NGE-ra-g9Q"/>
@@ -295,5 +312,6 @@
     </scenes>
     <resources>
         <image name="bulb-off" width="497" height="512"/>
+        <image name="logo" width="1641" height="1747"/>
     </resources>
 </document>

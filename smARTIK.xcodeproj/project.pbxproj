@@ -13,6 +13,8 @@
 		F23413201E69F8D1006021F1 /* ThermostatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F234131F1E69F8D1006021F1 /* ThermostatVC.swift */; };
 		F235B3961E529D6000E055A3 /* Authentification.swift in Sources */ = {isa = PBXBuildFile; fileRef = F235B3941E529D6000E055A3 /* Authentification.swift */; };
 		F235B3971E529D6000E055A3 /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = F235B3951E529D6000E055A3 /* Metadata.swift */; };
+		F236ADB81E708A7100F76961 /* switch-sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = F236ADB71E708A7100F76961 /* switch-sound.wav */; };
+		F236ADBA1E709A1700F76961 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F236ADB91E709A1700F76961 /* RoundedButton.swift */; };
 		F26CCE5D1E46756B00121D10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26CCE5C1E46756B00121D10 /* AppDelegate.swift */; };
 		F26CCE5F1E46756B00121D10 /* LightBulbVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26CCE5E1E46756B00121D10 /* LightBulbVC.swift */; };
 		F26CCE621E46756B00121D10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F26CCE601E46756B00121D10 /* Main.storyboard */; };
@@ -30,6 +32,8 @@
 		F234131F1E69F8D1006021F1 /* ThermostatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThermostatVC.swift; sourceTree = "<group>"; };
 		F235B3941E529D6000E055A3 /* Authentification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authentification.swift; sourceTree = "<group>"; };
 		F235B3951E529D6000E055A3 /* Metadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
+		F236ADB71E708A7100F76961 /* switch-sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "switch-sound.wav"; sourceTree = "<group>"; };
+		F236ADB91E709A1700F76961 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		F26CCE591E46756B00121D10 /* smARTIK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smARTIK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F26CCE5C1E46756B00121D10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F26CCE5E1E46756B00121D10 /* LightBulbVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightBulbVC.swift; sourceTree = "<group>"; };
@@ -95,6 +99,7 @@
 				F26CCE601E46756B00121D10 /* Main.storyboard */,
 				F26CCE631E46756B00121D10 /* Assets.xcassets */,
 				F235B3941E529D6000E055A3 /* Authentification.swift */,
+				F236ADB71E708A7100F76961 /* switch-sound.wav */,
 				F235B3951E529D6000E055A3 /* Metadata.swift */,
 				F26CCE651E46756B00121D10 /* LaunchScreen.storyboard */,
 				F26CCE681E46756B00121D10 /* Info.plist */,
@@ -102,6 +107,7 @@
 				F200CA6A1E63DF4100352324 /* ListVC.swift */,
 				F21E51AA1E68E20A00407CD5 /* DeviceCell.swift */,
 				F234131F1E69F8D1006021F1 /* ThermostatVC.swift */,
+				F236ADB91E709A1700F76961 /* RoundedButton.swift */,
 			);
 			path = smARTIK;
 			sourceTree = "<group>";
@@ -169,6 +175,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F236ADB81E708A7100F76961 /* switch-sound.wav in Resources */,
 				F26CCE671E46756B00121D10 /* LaunchScreen.storyboard in Resources */,
 				F26CCE641E46756B00121D10 /* Assets.xcassets in Resources */,
 				F26CCE621E46756B00121D10 /* Main.storyboard in Resources */,
@@ -234,6 +241,7 @@
 				F23413201E69F8D1006021F1 /* ThermostatVC.swift in Sources */,
 				F26CCE5F1E46756B00121D10 /* LightBulbVC.swift in Sources */,
 				F235B3961E529D6000E055A3 /* Authentification.swift in Sources */,
+				F236ADBA1E709A1700F76961 /* RoundedButton.swift in Sources */,
 				F21E51AB1E68E20A00407CD5 /* DeviceCell.swift in Sources */,
 				F235B3971E529D6000E055A3 /* Metadata.swift in Sources */,
 				F26CCE5D1E46756B00121D10 /* AppDelegate.swift in Sources */,

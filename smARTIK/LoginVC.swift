@@ -15,11 +15,13 @@ class LoginVC: UIViewController, UIWebViewDelegate {
     
     @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var loginBtn: UIButton!
+    @IBOutlet weak var logoImg: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         webView.delegate = self
+        setBackgroundImage()
 
     }
     
@@ -30,6 +32,7 @@ class LoginVC: UIViewController, UIWebViewDelegate {
     @IBAction func loginPressed(_ sender: UIButton) {
         webView.isHidden = false
         loginBtn.isHidden = true
+        logoImg.isHidden = true
         let url = URL(string: Authentification.authPath)
         let request = URLRequest(url: url!)
         webView.loadRequest(request)
@@ -63,6 +66,17 @@ class LoginVC: UIViewController, UIWebViewDelegate {
             return false
         }
         return true
+    }
+    
+    func setBackgroundImage() {
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "login-screen-bg")?.draw(in: self.view.bounds)
+        
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        
+        UIGraphicsEndImageContext()
+        
+        self.view.backgroundColor = UIColor(patternImage: image)
     }
 
 }

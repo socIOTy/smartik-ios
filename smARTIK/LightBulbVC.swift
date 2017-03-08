@@ -9,6 +9,7 @@
 import UIKit
 import ArtikCloudSwift3
 import CircleSlider
+import AVFoundation
 
 class LightBulbVC: UIViewController {
     
@@ -59,6 +60,9 @@ class LightBulbVC: UIViewController {
     let bulbOn = UIImage(named: "bulb-on")
     let bulbOff = UIImage(named: "bulb-off")
     
+    let soundPath = Bundle.main.path(forResource: "switch-sound", ofType: "wav")
+    var switchSound: AVAudioPlayer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -67,7 +71,6 @@ class LightBulbVC: UIViewController {
         
         self.buildCircleSlider()
         
-        let intensityLevel = Int(round(circleAdapter.value))
         let rColor = Int(round(rColorSlider.value))
         let gColor = Int(round(gColorSlider.value))
         let bColor = Int(round(bColorSlider.value))
@@ -78,6 +81,17 @@ class LightBulbVC: UIViewController {
         bColorLabel.text = "B: \(bColor)"
         
         valueLabel.textColor = UIColor.lightGray
+        
+        let soundURL = URL(fileURLWithPath: self.soundPath!)
+        
+        do {
+            try switchSound = AVAudioPlayer(contentsOf: soundURL)
+            switchSound.prepareToPlay()
+        } catch let err as NSError {
+            print(err.debugDescription)
+        }
+        
+        self.navigationItem.title = device.name
     }
     
     override func viewDidLayoutSubviews() {
@@ -115,6 +129,7 @@ class LightBulbVC: UIViewController {
     
     
     @IBAction func switchPressed(_ sender: UIButton) {
+        playSwitchSound()
         let actions: Actions = Actions()
         let actionArray : ActionArray = ActionArray()
         let action = Action()
@@ -273,6 +288,14 @@ class LightBulbVC: UIViewController {
         UIGraphicsEndImageContext()
         
         self.view.backgroundColor = UIColor(patternImage: image)
+    }
+    
+    func playSwitchSound() {
+        if switchSound.isPlaying {
+            switchSound.stop()
+        }
+        
+        switchSound.play()
     }
     
 }

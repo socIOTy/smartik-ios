@@ -15,6 +15,7 @@ class DeviceCell: UITableViewCell {
     @IBOutlet weak var deviceName: UILabel!
     
     func configureCell(device: Device) {
+        self.backgroundColor = UIColor.clear
         deviceName.text = device.name
     }
 
