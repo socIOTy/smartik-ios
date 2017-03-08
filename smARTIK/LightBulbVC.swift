@@ -8,32 +8,42 @@
 
 import UIKit
 import ArtikCloudSwift3
+import CircleSlider
 
 class LightBulbVC: UIViewController {
     
-    @IBOutlet weak var statulLbl: UILabel!
+    @IBOutlet weak var switcher: UIButton!
     
-    
-    @IBOutlet weak var intensitySlider: UISlider!
     @IBOutlet weak var rColorSlider: UISlider!
     @IBOutlet weak var gColorSlider: UISlider!
     @IBOutlet weak var bColorSlider: UISlider!
     
     
-    @IBOutlet weak var intensityLabel: UILabel!
     @IBOutlet weak var rColorLabel: UILabel!
     @IBOutlet weak var gColorLabel: UILabel!
     @IBOutlet weak var bColorLabel: UILabel!
     
-    @IBOutlet weak var colorView: UIView!
+
     
+    @IBOutlet weak var circleSlider: UIView!
     
-    @IBOutlet weak var colorTitle: UILabel!
-    @IBOutlet weak var rColorTitle: UILabel!
-    @IBOutlet weak var gColorTitle: UILabel!
-    @IBOutlet weak var bColorTitle: UILabel!
+    private var valueLabel: UILabel!
     
-    @IBOutlet weak var switchBulb: UISwitch!
+    private var circleAdapter: CircleSlider!
+    
+    private var sliderOptions: [CircleSliderOption] {
+        return [
+            CircleSliderOption.barColor(UIColor(red: 200/255, green: 200/255, blue: 200/255, alpha: 0.5)),
+            CircleSliderOption.thumbColor(UIColor(red: 141/255, green: 185/255, blue: 204/255, alpha: 1)),
+            CircleSliderOption.trackingColor(UIColor(red: 78/255, green: 136/255, blue: 185/255, alpha: 1)),
+            CircleSliderOption.barWidth(10),
+            CircleSliderOption.startAngle(135),
+            CircleSliderOption.maxValue(99),
+            CircleSliderOption.minValue(0),
+            CircleSliderOption.viewInset(1)
+        ]
+    }
+
     
     private var _device: Device!
     
@@ -46,33 +56,36 @@ class LightBulbVC: UIViewController {
         }
     }
     
+    let bulbOn = UIImage(named: "bulb-on")
+    let bulbOff = UIImage(named: "bulb-off")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if (switchBulb.isOn) {
-            setOn()
-        } else {
-            setOff()
-        }
+        setBackgroundImage()
         
-        let intensityLevel = Int(round(intensitySlider.value))
+        
+        self.buildCircleSlider()
+        
+        let intensityLevel = Int(round(circleAdapter.value))
         let rColor = Int(round(rColorSlider.value))
         let gColor = Int(round(gColorSlider.value))
         let bColor = Int(round(bColorSlider.value))
         
-        intensityLabel.text = "Intensity: \(intensityLevel)"
         
         rColorLabel.text = "R: \(rColor)"
         gColorLabel.text = "G: \(gColor)"
         bColorLabel.text = "B: \(bColor)"
         
-        colorView.backgroundColor = UIColor(red: CGFloat(rColor/255), green: CGFloat(gColor/255), blue: CGFloat(bColor/255), alpha: CGFloat(intensityLevel/100))
+        valueLabel.textColor = UIColor.lightGray
+    }
+    
+    override func viewDidLayoutSubviews() {
+        self.circleAdapter.frame = self.circleSlider.bounds
+        self.valueLabel.center = CGPoint(x: self.circleSlider.bounds.width * 0.5, y: self.circleSlider.bounds.height * 0.5)
     }
     
     
-    @IBAction func loginPressed(_ sender: Any) {
-        Authentification.artikCloudLogin()
-    }
     
     @IBAction func switched(_ sender: UISwitch) {
         let actions: Actions = Actions()
@@ -94,7 +107,6 @@ class LightBulbVC: UIViewController {
         
         MessagesAPI.sendActions(data: actions).then {
             response -> Void in
-            self.statulLbl.text = response.data?.mid!
             }.catch{error -> Void in
                 print(String(format: "%s", String(describing: error)))
         }
@@ -102,26 +114,52 @@ class LightBulbVC: UIViewController {
     }
     
     
-    @IBAction func intensityChanging(_ sender: UISlider) {
-        intensityLabel.text = "Intensity: \(Int(round(intensitySlider.value)))"
-        colorView.backgroundColor = UIColor(red: CGFloat(rColorSlider.value/255), green: CGFloat(gColorSlider.value/255), blue: CGFloat(bColorSlider.value/255), alpha: CGFloat(intensitySlider.value/100))
+    @IBAction func switchPressed(_ sender: UIButton) {
+        let actions: Actions = Actions()
+        let actionArray : ActionArray = ActionArray()
+        let action = Action()
+        if !(sender.tag == 1) {
+            sender.tag = 1
+            action.name = "setOn"
+            setOn()
+        } else {
+            sender.tag = 0
+            action.name = "setOff"
+            setOff()
+        }
+        actionArray.actions = []
+        actionArray.actions!.append(action)
+        actions.data = actionArray
+        actions.ddid = device.id
+        
+        
+        MessagesAPI.sendActions(data: actions).then {
+            response -> Void in
+            }.catch{error -> Void in
+                print(String(format: "%s", String(describing: error)))
+        }
+
     }
+    
     
     
     @IBAction func rColorChanging(_ sender: UISlider) {
         rColorLabel.text = "R: \(Int(round(rColorSlider.value)))"
-        colorView.backgroundColor = UIColor(red: CGFloat(rColorSlider.value/255), green: CGFloat(gColorSlider.value/255), blue: CGFloat(bColorSlider.value/255), alpha: CGFloat(intensitySlider.value/100))
+        let newColor = UIColor(red: CGFloat(rColorSlider.value/255), green: CGFloat(gColorSlider.value/255), blue: CGFloat(bColorSlider.value/255), alpha: CGFloat(circleAdapter.value/100))
+        self.circleAdapter.changeOptions([.trackingColor(newColor)])
     }
     
     
     @IBAction func gColorChanging(_ sender: UISlider) {
         gColorLabel.text = "G: \(Int(round(gColorSlider.value)))"
-        colorView.backgroundColor = UIColor(red: CGFloat(rColorSlider.value/255), green: CGFloat(gColorSlider.value/255), blue: CGFloat(bColorSlider.value/255), alpha: CGFloat(intensitySlider.value/100))
+        let newColor = UIColor(red: CGFloat(rColorSlider.value/255), green: CGFloat(gColorSlider.value/255), blue: CGFloat(bColorSlider.value/255), alpha: CGFloat(circleAdapter.value/100))
+        self.circleAdapter.changeOptions([.trackingColor(newColor)])
     }
     
     @IBAction func bColorChanging(_ sender: UISlider) {
         bColorLabel.text = "B: \(Int(round(bColorSlider.value)))"
-        colorView.backgroundColor = UIColor(red: CGFloat(rColorSlider.value/255), green: CGFloat(gColorSlider.value/255), blue: CGFloat(bColorSlider.value/255), alpha: CGFloat(intensitySlider.value/100))
+        let newColor = UIColor(red: CGFloat(rColorSlider.value/255), green: CGFloat(gColorSlider.value/255), blue: CGFloat(bColorSlider.value/255), alpha: CGFloat(circleAdapter.value/100))
+        self.circleAdapter.changeOptions([.trackingColor(newColor)])
     }
     
     
@@ -140,7 +178,7 @@ class LightBulbVC: UIViewController {
         
         action.parameters = [
             "colorRGB": bulbColorRGB,
-            "intensity": Int(round(intensitySlider.value))
+            "intensity": Int(round(circleAdapter.value))
         ]
         
         actionArray.actions = []
@@ -150,21 +188,56 @@ class LightBulbVC: UIViewController {
         
         MessagesAPI.sendActions(data: actions).then {
             response -> Void in
-            //self.statulLbl.text = response.data?.mid!
             }.catch{error -> Void in
                 print(String(format: "%s", String(describing: error)))
         }
 
     }
     
-    @IBAction func intensityChangingEnds(_ sender: UISlider) {
+    func setOff() {
+        self.circleSlider.isHidden = true
+        
+        self.rColorLabel.isHidden = true
+        self.gColorLabel.isHidden = true
+        self.bColorLabel.isHidden = true
+        
+        self.rColorSlider.isHidden = true
+        self.gColorSlider.isHidden = true
+        self.bColorSlider.isHidden = true
+
+        
+        switcher.setImage(bulbOff, for: .normal)
+    }
+    
+    func setOn() {
+        self.circleSlider.isHidden = false
+        
+        self.rColorLabel.isHidden = false
+        self.gColorLabel.isHidden = false
+        self.bColorLabel.isHidden = false
+        
+        self.rColorSlider.isHidden = false
+        self.gColorSlider.isHidden = false
+        self.bColorSlider.isHidden = false
+
+
+        switcher.setImage(bulbOn, for: .normal)
+    }
+    
+    func valueChange(sender: CircleSlider) {
+        self.valueLabel.text = "\(Int(round(sender.value)))%"
+        let newColor = UIColor(red: CGFloat(rColorSlider.value/255), green: CGFloat(gColorSlider.value/255), blue: CGFloat(bColorSlider.value/255), alpha: CGFloat(sender.value/100))
+        self.circleAdapter.changeOptions([.trackingColor(newColor)])
+    }
+    
+    func valueEndChange(sender: CircleSlider) {
         let actions: Actions = Actions()
         let actionArray : ActionArray = ActionArray()
         let action = Action()
         
         action.name = "setIntensity"
-    
-        action.parameters = ["intensity" : Int(round(intensitySlider.value))]
+        
+        action.parameters = ["intensity" : Int(round(sender.value))]
         
         actionArray.actions = []
         actionArray.actions!.append(action)
@@ -173,55 +246,34 @@ class LightBulbVC: UIViewController {
         
         MessagesAPI.sendActions(data: actions).then {
             response -> Void in
-            //self.statulLbl.text = response.data?.mid!
             }.catch{error -> Void in
                 print(String(format: "%s", String(describing: error)))
         }
-    }
-    
-    func setOff() {
-        self.statulLbl.isHidden = true
-        
-        self.intensityLabel.isHidden = true
-        self.rColorLabel.isHidden = true
-        self.gColorLabel.isHidden = true
-        self.bColorLabel.isHidden = true
-        
-        self.intensitySlider.isHidden = true
-        self.rColorSlider.isHidden = true
-        self.gColorSlider.isHidden = true
-        self.bColorSlider.isHidden = true
-        
-        self.colorView.isHidden = true
-        
-        self.colorTitle.isHidden = true
-        self.rColorTitle.isHidden = true
-        self.gColorTitle.isHidden = true
-        self.bColorTitle.isHidden = true
-    }
-    
-    func setOn() {
-        self.statulLbl.isHidden = false
-        
-        self.intensityLabel.isHidden = false
-        self.rColorLabel.isHidden = false
-        self.gColorLabel.isHidden = false
-        self.bColorLabel.isHidden = false
-        
-        self.intensitySlider.isHidden = false
-        self.rColorSlider.isHidden = false
-        self.gColorSlider.isHidden = false
-        self.bColorSlider.isHidden = false
-        
-        self.colorView.isHidden = false
-        
-        self.colorTitle.isHidden = false
-        self.rColorTitle.isHidden = false
-        self.gColorTitle.isHidden = false
-        self.bColorTitle.isHidden = false
 
     }
     
+    
+    
+    private func buildCircleSlider() {
+        self.circleAdapter = CircleSlider(frame: self.circleSlider.bounds, options: self.sliderOptions)
+        self.circleAdapter?.addTarget(self, action: #selector(valueChange(sender:)), for: .valueChanged)
+        self.circleAdapter?.addTarget(self, action: #selector(valueEndChange(sender:)), for: .touchUpInside)
+        self.circleSlider.addSubview(self.circleAdapter!)
+        self.valueLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        self.valueLabel.textAlignment = .center
+        self.circleAdapter.addSubview(self.valueLabel)
+    }
+    
+    func setBackgroundImage() {
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "room-bg")?.draw(in: self.view.bounds)
+        
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        
+        UIGraphicsEndImageContext()
+        
+        self.view.backgroundColor = UIColor(patternImage: image)
+    }
     
 }
 

@@ -59,6 +59,11 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 destination.device = device
             }
         }
+        if let destination = segue.destination as? ThermostatVC {
+            if let device = sender as? Device {
+                destination.device = device
+            }
+        }
     }
 
 }

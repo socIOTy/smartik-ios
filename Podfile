@@ -12,5 +12,5 @@ target ‘smARTIK’ do
   platform :ios, ’10.0’
   use_frameworks!
   pod 'ArtikCloudSwift3’, :git => 'https://github.com/artikcloud/artikcloud-swift3.git'
-
+  pod ‘CircleSlider’
 end
