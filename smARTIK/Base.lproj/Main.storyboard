@@ -27,15 +27,15 @@
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uz0-hl-mm8">
-                                <rect key="frame" x="37" y="391" width="300" height="75"/>
-                                <color key="backgroundColor" red="0.99607843137254903" green="0.99607843137254903" blue="0.99607843137254903" alpha="0.85482662671232879" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="37" y="420" width="300" height="75"/>
+                                <color key="backgroundColor" red="0.039215686274509803" green="0.23921568627450979" blue="0.32941176470588235" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="8PD-Zs-tAg"/>
                                     <constraint firstAttribute="width" constant="300" id="BkC-q4-eRK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
                                 <state key="normal" title="Login">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="radius">
@@ -48,7 +48,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="zfp-LW-rcG">
-                                <rect key="frame" x="52" y="61" width="270" height="270"/>
+                                <rect key="frame" x="52" y="90" width="270" height="270"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="270" id="6z8-2n-WcZ"/>
                                     <constraint firstAttribute="width" constant="270" id="txB-Ug-KDB"/>
@@ -64,7 +64,7 @@
                             <constraint firstAttribute="trailing" secondItem="MQd-nJ-5Pz" secondAttribute="trailing" id="R3L-Si-Oea"/>
                             <constraint firstItem="MQd-nJ-5Pz" firstAttribute="leading" secondItem="Xz5-as-knW" secondAttribute="leading" id="aQK-ZL-JUe"/>
                             <constraint firstItem="zfp-LW-rcG" firstAttribute="centerX" secondItem="Xz5-as-knW" secondAttribute="centerX" id="k0Y-RE-cUm"/>
-                            <constraint firstItem="zfp-LW-rcG" firstAttribute="top" secondItem="U7F-Gt-EWl" secondAttribute="bottom" constant="41" id="znD-3M-S2W"/>
+                            <constraint firstItem="zfp-LW-rcG" firstAttribute="top" secondItem="U7F-Gt-EWl" secondAttribute="bottom" constant="70" id="znD-3M-S2W"/>
                         </constraints>
                     </view>
                     <connections>
