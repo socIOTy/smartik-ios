@@ -28,6 +28,13 @@ class LoginVC: UIViewController, UIWebViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if UserDefaults.standard.getToken() != "" && !UserDefaults.standard.isExpired() {
+            ArtikCloudAPI.customHeaders["Authorization"] = "bearer " + UserDefaults.standard.getToken()
+            self.performSegue(withIdentifier: "ListVC", sender: self)
+        }
+    }
 
     @IBAction func loginPressed(_ sender: UIButton) {
         webView.isHidden = false
@@ -62,6 +69,9 @@ class LoginVC: UIViewController, UIWebViewDelegate {
             
             
             ArtikCloudAPI.customHeaders["Authorization"] = "bearer " + Authentification.credentials["access_token"]!
+            let exp: UInt64 = UInt64(Authentification.credentials["expires_in"]!)! + UInt64(NSDate().timeIntervalSince1970)
+            UserDefaults.standard.setToken(token: Authentification.credentials["access_token"]!)
+            UserDefaults.standard.setExp(exp: exp)
             performSegue(withIdentifier: "ListVC", sender: self)
             return false
         }

@@ -104,6 +104,13 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         self.tableView.backgroundColor = UIColor(patternImage: image)
     }
+    
+    
+    
+    @IBAction func logoutPressed(_ sender: UIBarButtonItem) {
+        UserDefaults.standard.clearToken()
+        dismiss(animated: true, completion: nil)
+    }
 
 
 }

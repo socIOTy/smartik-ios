@@ -21,6 +21,7 @@
 		F26CCE641E46756B00121D10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F26CCE631E46756B00121D10 /* Assets.xcassets */; };
 		F26CCE671E46756B00121D10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F26CCE651E46756B00121D10 /* LaunchScreen.storyboard */; };
 		F2E2030A1E63DB3400E720F1 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E203091E63DB3400E720F1 /* LoginVC.swift */; };
+		F2E5DA871E7A0B6A0090502E /* UserDefaults+Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E5DA861E7A0B6A0090502E /* UserDefaults+Functions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		F26CCE661E46756B00121D10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F26CCE681E46756B00121D10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2E203091E63DB3400E720F1 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		F2E5DA861E7A0B6A0090502E /* UserDefaults+Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Functions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				F21E51AA1E68E20A00407CD5 /* DeviceCell.swift */,
 				F234131F1E69F8D1006021F1 /* ThermostatVC.swift */,
 				F236ADB91E709A1700F76961 /* RoundedButton.swift */,
+				F2E5DA861E7A0B6A0090502E /* UserDefaults+Functions.swift */,
 			);
 			path = smARTIK;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2E5DA871E7A0B6A0090502E /* UserDefaults+Functions.swift in Sources */,
 				F200CA6B1E63DF4100352324 /* ListVC.swift in Sources */,
 				F23413201E69F8D1006021F1 /* ThermostatVC.swift in Sources */,
 				F26CCE5F1E46756B00121D10 /* LightBulbVC.swift in Sources */,
