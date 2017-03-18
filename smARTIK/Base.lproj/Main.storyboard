@@ -161,16 +161,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19°C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMh-9D-UTH">
-                                <rect key="frame" x="20" y="104" width="374" height="220"/>
+                                <rect key="frame" x="20" y="104" width="374" height="150"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="220" id="E8k-bp-cH7"/>
+                                    <constraint firstAttribute="height" constant="150" id="E8k-bp-cH7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="115"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jOD-uY-dov">
-                                <rect key="frame" x="147.66666666666669" y="339" width="120.00000000000006" height="29"/>
+                                <rect key="frame" x="147.66666666666669" y="269" width="120.00000000000006" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="MYa-kM-DrR"/>
                                 </constraints>
@@ -184,38 +184,38 @@
                                 </connections>
                             </segmentedControl>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="XiP-Jb-G3y">
-                                <rect key="frame" x="18" y="466.66666666666669" width="378" height="31"/>
+                                <rect key="frame" x="18" y="396.66666666666669" width="378" height="31"/>
                                 <color key="tintColor" red="0.96862745100000003" green="0.85098039219999999" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="tempChanged:" destination="nMu-1j-eac" eventType="valueChanged" id="YTB-co-3gR"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature Control" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="voK-so-6t2">
-                                <rect key="frame" x="19.999999999999986" y="417" width="229.66666666666663" height="34.333333333333314"/>
+                                <rect key="frame" x="19.999999999999986" y="347" width="229.66666666666663" height="34.333333333333314"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10°C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbq-fk-tBn">
-                                <rect key="frame" x="20" y="504.66666666666663" width="51.666666666666671" height="31.666666666666629"/>
+                                <rect key="frame" x="20" y="434.66666666666669" width="51.666666666666671" height="31.666666666666629"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="40°C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TXx-Lb-G8Y">
-                                <rect key="frame" x="342" y="504.33333333333326" width="51.666666666666686" height="31.666666666666742"/>
+                                <rect key="frame" x="342" y="434.33333333333326" width="51.666666666666686" height="31.666666666666686"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="System" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdZ-hU-24Y">
-                                <rect key="frame" x="20" y="611.33333333333337" width="79" height="34.333333333333258"/>
+                                <rect key="frame" x="20" y="541.33333333333337" width="79" height="34.333333333333258"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ujh-en-mYA">
-                                <rect key="frame" x="20" y="653.66666666666663" width="374" height="29"/>
+                                <rect key="frame" x="20" y="583.66666666666663" width="374" height="29"/>
                                 <segments>
                                     <segment title="Off"/>
                                     <segment title="Auto"/>
