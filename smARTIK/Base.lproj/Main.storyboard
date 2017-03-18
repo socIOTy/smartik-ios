@@ -102,7 +102,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fww-iS-j3U">
-                                                    <rect key="frame" x="23" y="8" width="329" height="60"/>
+                                                    <rect key="frame" x="23" y="8" width="368" height="60"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -159,12 +159,110 @@
                     <view key="view" contentMode="scaleToFill" id="Dkx-x6-5N0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19°C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMh-9D-UTH">
+                                <rect key="frame" x="20" y="104" width="374" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="E8k-bp-cH7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="115"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jOD-uY-dov">
+                                <rect key="frame" x="147.66666666666669" y="339" width="120.00000000000006" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="MYa-kM-DrR"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="°C"/>
+                                    <segment title="°F"/>
+                                </segments>
+                                <color key="tintColor" red="0.96862745098039216" green="0.85098039215686272" blue="0.29411764705882354" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="degreeChanged:" destination="nMu-1j-eac" eventType="valueChanged" id="NbK-rU-eg6"/>
+                                </connections>
+                            </segmentedControl>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="XiP-Jb-G3y">
+                                <rect key="frame" x="18" y="466.66666666666669" width="378" height="31"/>
+                                <color key="tintColor" red="0.96862745100000003" green="0.85098039219999999" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="tempChanged:" destination="nMu-1j-eac" eventType="valueChanged" id="YTB-co-3gR"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature Control" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="voK-so-6t2">
+                                <rect key="frame" x="19.999999999999986" y="417" width="229.66666666666663" height="34.333333333333314"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10°C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbq-fk-tBn">
+                                <rect key="frame" x="20" y="504.66666666666663" width="51.666666666666671" height="31.666666666666629"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="40°C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TXx-Lb-G8Y">
+                                <rect key="frame" x="342" y="504.33333333333326" width="51.666666666666686" height="31.666666666666742"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="System" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdZ-hU-24Y">
+                                <rect key="frame" x="20" y="611.33333333333337" width="79" height="34.333333333333258"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ujh-en-mYA">
+                                <rect key="frame" x="20" y="653.66666666666663" width="374" height="29"/>
+                                <segments>
+                                    <segment title="Off"/>
+                                    <segment title="Auto"/>
+                                    <segment title="Heat"/>
+                                    <segment title="Cool"/>
+                                </segments>
+                                <color key="tintColor" red="0.96862745100000003" green="0.85098039219999999" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="stateChanged:" destination="nMu-1j-eac" eventType="valueChanged" id="19C-v1-rq3"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XiP-Jb-G3y" firstAttribute="leading" secondItem="Dkx-x6-5N0" secondAttribute="leadingMargin" id="0kV-m8-4hZ"/>
+                            <constraint firstItem="tMh-9D-UTH" firstAttribute="top" secondItem="OdL-ZS-DsY" secondAttribute="bottom" constant="40" id="3HW-Wr-Odc"/>
+                            <constraint firstItem="TXx-Lb-G8Y" firstAttribute="trailing" secondItem="Dkx-x6-5N0" secondAttribute="trailingMargin" id="3UW-YM-ibd"/>
+                            <constraint firstItem="tMh-9D-UTH" firstAttribute="leading" secondItem="Dkx-x6-5N0" secondAttribute="leadingMargin" id="BH5-dI-Jxm"/>
+                            <constraint firstItem="jOD-uY-dov" firstAttribute="top" secondItem="tMh-9D-UTH" secondAttribute="bottom" constant="15" id="CRr-gi-W9R"/>
+                            <constraint firstItem="bbq-fk-tBn" firstAttribute="leading" secondItem="Dkx-x6-5N0" secondAttribute="leadingMargin" id="HHI-ff-yKS"/>
+                            <constraint firstItem="XiP-Jb-G3y" firstAttribute="top" secondItem="voK-so-6t2" secondAttribute="bottom" constant="15" id="IXI-WX-bj6"/>
+                            <constraint firstItem="TXx-Lb-G8Y" firstAttribute="top" secondItem="XiP-Jb-G3y" secondAttribute="bottom" constant="8" id="KY2-bM-kZc"/>
+                            <constraint firstItem="Ujh-en-mYA" firstAttribute="leading" secondItem="Dkx-x6-5N0" secondAttribute="leadingMargin" id="Pg0-Vq-vlb"/>
+                            <constraint firstItem="bbq-fk-tBn" firstAttribute="top" secondItem="XiP-Jb-G3y" secondAttribute="bottom" constant="8" id="Uci-Mv-lJM"/>
+                            <constraint firstItem="Ujh-en-mYA" firstAttribute="trailing" secondItem="Dkx-x6-5N0" secondAttribute="trailingMargin" id="Y79-nI-qVS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tMh-9D-UTH" secondAttribute="trailing" id="dPX-4f-E08"/>
+                            <constraint firstItem="zdZ-hU-24Y" firstAttribute="leading" secondItem="Dkx-x6-5N0" secondAttribute="leadingMargin" id="fQR-tt-Jbv"/>
+                            <constraint firstItem="Ujh-en-mYA" firstAttribute="top" secondItem="zdZ-hU-24Y" secondAttribute="bottom" constant="8" id="fgR-uI-3Zz"/>
+                            <constraint firstItem="XiP-Jb-G3y" firstAttribute="trailing" secondItem="Dkx-x6-5N0" secondAttribute="trailingMargin" id="ihR-dv-UfH"/>
+                            <constraint firstItem="voK-so-6t2" firstAttribute="top" secondItem="jOD-uY-dov" secondAttribute="bottom" constant="50" id="n9A-f7-YKU"/>
+                            <constraint firstItem="voK-so-6t2" firstAttribute="leading" secondItem="Dkx-x6-5N0" secondAttribute="leadingMargin" id="nU2-fP-0Re"/>
+                            <constraint firstItem="zdZ-hU-24Y" firstAttribute="top" secondItem="bbq-fk-tBn" secondAttribute="bottom" constant="75" id="pIG-uj-j9d"/>
+                            <constraint firstItem="jOD-uY-dov" firstAttribute="centerX" secondItem="Dkx-x6-5N0" secondAttribute="centerX" id="ryq-0O-m9A"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="currentTempLbl" destination="tMh-9D-UTH" id="ovd-fr-qrk"/>
+                        <outlet property="maxTempLbl" destination="TXx-Lb-G8Y" id="cPb-Hh-ylK"/>
+                        <outlet property="minTempLbl" destination="bbq-fk-tBn" id="tBP-3K-5ta"/>
+                        <outlet property="stateSegment" destination="Ujh-en-mYA" id="pI5-I2-rB9"/>
+                        <outlet property="tempSlider" destination="XiP-Jb-G3y" id="RhM-Ca-M0k"/>
+                        <outlet property="temperatureSegment" destination="jOD-uY-dov" id="cJp-S4-Hcr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZX5-Pj-1v1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1631" y="470"/>
+            <point key="canvasLocation" x="1630.4347826086957" y="469.56521739130437"/>
         </scene>
         <!--Light BulbVC-->
         <scene sceneID="tne-QT-ifu">
