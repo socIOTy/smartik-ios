@@ -9,7 +9,7 @@
 import UIKit
 import ArtikCloudSwift3
 
-class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class DeviceListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     private var deviceList = [Device]()
@@ -17,7 +17,7 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setBackgroundImage()
+        //setBackgroundImage()
 
         tableView.delegate = self
         tableView.dataSource = self
@@ -32,6 +32,7 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 
                 print(String(format: "%s", String(describing: error)))
         }
+        self.tabBarController?.navigationItem.title = "Device List"
         
     }
     
@@ -105,12 +106,6 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.tableView.backgroundColor = UIColor(patternImage: image)
     }
     
-    
-    
-    @IBAction func logoutPressed(_ sender: UIBarButtonItem) {
-        UserDefaults.standard.clearToken()
-        dismiss(animated: true, completion: nil)
-    }
 
 
 }

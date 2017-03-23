@@ -32,7 +32,7 @@ class LoginVC: UIViewController, UIWebViewDelegate {
     override func viewDidAppear(_ animated: Bool) {
         if UserDefaults.standard.getToken() != "" && !UserDefaults.standard.isExpired() {
             ArtikCloudAPI.customHeaders["Authorization"] = "bearer " + UserDefaults.standard.getToken()
-            self.performSegue(withIdentifier: "ListVC", sender: self)
+            self.performSegue(withIdentifier: "DeviceListVC", sender: self)
         }
     }
 
@@ -72,7 +72,7 @@ class LoginVC: UIViewController, UIWebViewDelegate {
             let exp: UInt64 = UInt64(Authentification.credentials["expires_in"]!)! + UInt64(NSDate().timeIntervalSince1970)
             UserDefaults.standard.setToken(token: Authentification.credentials["access_token"]!)
             UserDefaults.standard.setExp(exp: exp)
-            performSegue(withIdentifier: "ListVC", sender: self)
+            performSegue(withIdentifier: "DeviceListVC", sender: self)
             return false
         }
         return true

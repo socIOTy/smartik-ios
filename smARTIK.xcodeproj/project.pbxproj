@@ -8,8 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		8E7F65D43A83ABE0DA873154 /* Pods_smARTIK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BA0F84439AF49AD68FECA16 /* Pods_smARTIK.framework */; };
-		F200CA6B1E63DF4100352324 /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F200CA6A1E63DF4100352324 /* ListVC.swift */; };
+		F200CA6B1E63DF4100352324 /* DeviceListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F200CA6A1E63DF4100352324 /* DeviceListVC.swift */; };
 		F21E51AB1E68E20A00407CD5 /* DeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21E51AA1E68E20A00407CD5 /* DeviceCell.swift */; };
+		F22D18711E83512F00738900 /* PanelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22D18701E83512F00738900 /* PanelVC.swift */; };
+		F22D18761E8356CC00738900 /* StatusVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22D18751E8356CC00738900 /* StatusVC.swift */; };
+		F22D18781E8356FE00738900 /* RoomListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22D18771E8356FE00738900 /* RoomListVC.swift */; };
+		F22D187A1E83572100738900 /* ScenariosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22D18791E83572100738900 /* ScenariosVC.swift */; };
 		F23413201E69F8D1006021F1 /* ThermostatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F234131F1E69F8D1006021F1 /* ThermostatVC.swift */; };
 		F235B3961E529D6000E055A3 /* Authentification.swift in Sources */ = {isa = PBXBuildFile; fileRef = F235B3941E529D6000E055A3 /* Authentification.swift */; };
 		F235B3971E529D6000E055A3 /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = F235B3951E529D6000E055A3 /* Metadata.swift */; };
@@ -28,8 +32,12 @@
 		1BA0F84439AF49AD68FECA16 /* Pods_smARTIK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_smARTIK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B42631C14A0A1E68EC13BE45 /* Pods-smARTIK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smARTIK.release.xcconfig"; path = "Pods/Target Support Files/Pods-smARTIK/Pods-smARTIK.release.xcconfig"; sourceTree = "<group>"; };
 		B76F75F393F7A0400AA74FA5 /* Pods-smARTIK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smARTIK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-smARTIK/Pods-smARTIK.debug.xcconfig"; sourceTree = "<group>"; };
-		F200CA6A1E63DF4100352324 /* ListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
+		F200CA6A1E63DF4100352324 /* DeviceListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceListVC.swift; sourceTree = "<group>"; };
 		F21E51AA1E68E20A00407CD5 /* DeviceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceCell.swift; sourceTree = "<group>"; };
+		F22D18701E83512F00738900 /* PanelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelVC.swift; sourceTree = "<group>"; };
+		F22D18751E8356CC00738900 /* StatusVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusVC.swift; sourceTree = "<group>"; };
+		F22D18771E8356FE00738900 /* RoomListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomListVC.swift; sourceTree = "<group>"; };
+		F22D18791E83572100738900 /* ScenariosVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenariosVC.swift; sourceTree = "<group>"; };
 		F234131F1E69F8D1006021F1 /* ThermostatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThermostatVC.swift; sourceTree = "<group>"; };
 		F235B3941E529D6000E055A3 /* Authentification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authentification.swift; sourceTree = "<group>"; };
 		F235B3951E529D6000E055A3 /* Metadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
@@ -75,6 +83,36 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		F22D18721E83565700738900 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F22D18731E83565C00738900 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F236ADB91E709A1700F76961 /* RoundedButton.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		F22D18741E83565F00738900 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F26CCE5E1E46756B00121D10 /* LightBulbVC.swift */,
+				F2E203091E63DB3400E720F1 /* LoginVC.swift */,
+				F200CA6A1E63DF4100352324 /* DeviceListVC.swift */,
+				F234131F1E69F8D1006021F1 /* ThermostatVC.swift */,
+				F22D18701E83512F00738900 /* PanelVC.swift */,
+				F22D18751E8356CC00738900 /* StatusVC.swift */,
+				F22D18771E8356FE00738900 /* RoomListVC.swift */,
+				F22D18791E83572100738900 /* ScenariosVC.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		F26CCE501E46756A00121D10 = {
 			isa = PBXGroup;
 			children = (
@@ -96,8 +134,10 @@
 		F26CCE5B1E46756B00121D10 /* smARTIK */ = {
 			isa = PBXGroup;
 			children = (
+				F22D18741E83565F00738900 /* Controller */,
+				F22D18731E83565C00738900 /* View */,
+				F22D18721E83565700738900 /* Model */,
 				F26CCE5C1E46756B00121D10 /* AppDelegate.swift */,
-				F26CCE5E1E46756B00121D10 /* LightBulbVC.swift */,
 				F26CCE601E46756B00121D10 /* Main.storyboard */,
 				F26CCE631E46756B00121D10 /* Assets.xcassets */,
 				F235B3941E529D6000E055A3 /* Authentification.swift */,
@@ -105,11 +145,7 @@
 				F235B3951E529D6000E055A3 /* Metadata.swift */,
 				F26CCE651E46756B00121D10 /* LaunchScreen.storyboard */,
 				F26CCE681E46756B00121D10 /* Info.plist */,
-				F2E203091E63DB3400E720F1 /* LoginVC.swift */,
-				F200CA6A1E63DF4100352324 /* ListVC.swift */,
 				F21E51AA1E68E20A00407CD5 /* DeviceCell.swift */,
-				F234131F1E69F8D1006021F1 /* ThermostatVC.swift */,
-				F236ADB91E709A1700F76961 /* RoundedButton.swift */,
 				F2E5DA861E7A0B6A0090502E /* UserDefaults+Functions.swift */,
 			);
 			path = smARTIK;
@@ -241,14 +277,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2E5DA871E7A0B6A0090502E /* UserDefaults+Functions.swift in Sources */,
-				F200CA6B1E63DF4100352324 /* ListVC.swift in Sources */,
+				F200CA6B1E63DF4100352324 /* DeviceListVC.swift in Sources */,
+				F22D187A1E83572100738900 /* ScenariosVC.swift in Sources */,
 				F23413201E69F8D1006021F1 /* ThermostatVC.swift in Sources */,
 				F26CCE5F1E46756B00121D10 /* LightBulbVC.swift in Sources */,
 				F235B3961E529D6000E055A3 /* Authentification.swift in Sources */,
 				F236ADBA1E709A1700F76961 /* RoundedButton.swift in Sources */,
+				F22D18711E83512F00738900 /* PanelVC.swift in Sources */,
+				F22D18781E8356FE00738900 /* RoomListVC.swift in Sources */,
 				F21E51AB1E68E20A00407CD5 /* DeviceCell.swift in Sources */,
 				F235B3971E529D6000E055A3 /* Metadata.swift in Sources */,
 				F26CCE5D1E46756B00121D10 /* AppDelegate.swift in Sources */,
+				F22D18761E8356CC00738900 /* StatusVC.swift in Sources */,
 				F2E2030A1E63DB3400E720F1 /* LoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
