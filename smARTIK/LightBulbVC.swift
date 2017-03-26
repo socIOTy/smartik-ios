@@ -24,6 +24,11 @@ class LightBulbVC: UIViewController {
     @IBOutlet weak var gColorLabel: UILabel!
     @IBOutlet weak var bColorLabel: UILabel!
     
+    private var state: Bool = false
+    private var intensity: Int = 0
+    private var rColor: Int = 0
+    private var gColor: Int = 0
+    private var bColor: Int = 0
 
     
     @IBOutlet weak var circleSlider: UIView!
@@ -66,21 +71,17 @@ class LightBulbVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        onGetMessage()
+        
         setBackgroundImage()
         
         
         self.buildCircleSlider()
         
-        let rColor = Int(round(rColorSlider.value))
-        let gColor = Int(round(gColorSlider.value))
-        let bColor = Int(round(bColorSlider.value))
-        
-        
-        rColorLabel.text = "R: \(rColor)"
-        gColorLabel.text = "G: \(gColor)"
-        bColorLabel.text = "B: \(bColor)"
+
         
         valueLabel.textColor = UIColor.lightGray
+        
         
         let soundURL = URL(fileURLWithPath: self.soundPath!)
         
@@ -99,33 +100,6 @@ class LightBulbVC: UIViewController {
         self.valueLabel.center = CGPoint(x: self.circleSlider.bounds.width * 0.5, y: self.circleSlider.bounds.height * 0.5)
     }
     
-    
-    
-    @IBAction func switched(_ sender: UISwitch) {
-        let actions: Actions = Actions()
-        let actionArray : ActionArray = ActionArray()
-        let action = Action()
-        if sender.isOn {
-            action.name = "setOn"
-            setOn()
-        } else {
-            action.name = "setOff"
-            setOff()
-        }
-        
-        actionArray.actions = []
-        actionArray.actions!.append(action)
-        actions.data = actionArray
-        actions.ddid = device.id
-        
-        
-        MessagesAPI.sendActions(data: actions).then {
-            response -> Void in
-            }.catch{error -> Void in
-                print(String(format: "%s", String(describing: error)))
-        }
-        
-    }
     
     
     @IBAction func switchPressed(_ sender: UIButton) {
@@ -296,6 +270,78 @@ class LightBulbVC: UIViewController {
         }
         
         switchSound.play()
+    }
+    
+    func onGetMessage() {
+        
+        
+        let sdid = device.id
+        
+        //ARTIK Cloud MessagesAPI for sending / receiving message
+        
+        MessagesAPI.getLastNormalizedMessages(sdids: sdid).then { response -> Void in
+            
+            let normalizedMessage = response.data! as [NormalizedMessage]
+            
+            // move along if no messages
+            if normalizedMessage.isEmpty == true {
+                
+                print("No messages")
+                return
+                
+            }
+            
+            let responseObject:[String:String] = [
+                "mid": String(describing: normalizedMessage[0].mid!),
+                "ts": String(describing: normalizedMessage[0].ts!),
+                "sdtid": String(describing: normalizedMessage[0].sdtid!),
+                "data": String(describing: normalizedMessage[0].data!)
+            ]
+            print(responseObject["data"]!)
+            let data = normalizedMessage[0].data!
+            
+            self.state = (data["state"] != nil)
+            self.intensity = (data["intensity"] as! Int)
+            if let colors = data["colorRGB"] as? Dictionary<String,AnyObject> {
+                self.rColor = colors["r"] as! Int
+                self.gColor = colors["g"] as! Int
+                self.bColor = colors["b"] as! Int
+            }
+            
+            self.initUI()
+            
+            //print(responseObject.description)
+            
+            }.catch { error -> Void in
+                
+                print(String(format: "%s", String(describing: error)))
+                print("Get Message Error: " + String(describing: error))
+        }
+        
+    }
+    
+    func initUI() {
+        if state {
+            setOn()
+        } else {
+            setOff()
+        }
+        
+        let newColor = UIColor(red: CGFloat(rColorSlider.value/255), green: CGFloat(gColorSlider.value/255), blue: CGFloat(bColorSlider.value/255), alpha: CGFloat(intensity/100))
+        self.circleAdapter.changeOptions([.trackingColor(newColor)])
+        
+        
+        rColorSlider.value = Float(rColor)
+        gColorSlider.value = Float(gColor)
+        bColorSlider.value = Float(bColor)
+        
+        
+        rColorLabel.text = "R: \(rColor)"
+        gColorLabel.text = "G: \(gColor)"
+        bColorLabel.text = "B: \(bColor)"
+        
+        circleAdapter.value = Float(intensity)
+        
     }
     
 }
