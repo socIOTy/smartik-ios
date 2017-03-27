@@ -1,0 +1,6 @@
+framework module Pods_smARTIK {
+  umbrella header "Pods-smARTIK-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8DD3FFA31E89B9F60035ADE7 /* CustomBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3FFA21E89B9F60035ADE7 /* CustomBorder.swift */; };
 		8E7F65D43A83ABE0DA873154 /* Pods_smARTIK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BA0F84439AF49AD68FECA16 /* Pods_smARTIK.framework */; };
 		F200CA6B1E63DF4100352324 /* DeviceListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F200CA6A1E63DF4100352324 /* DeviceListVC.swift */; };
 		F21E51AB1E68E20A00407CD5 /* DeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21E51AA1E68E20A00407CD5 /* DeviceCell.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		1BA0F84439AF49AD68FECA16 /* Pods_smARTIK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_smARTIK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DD3FFA21E89B9F60035ADE7 /* CustomBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBorder.swift; sourceTree = "<group>"; };
 		B42631C14A0A1E68EC13BE45 /* Pods-smARTIK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smARTIK.release.xcconfig"; path = "Pods/Target Support Files/Pods-smARTIK/Pods-smARTIK.release.xcconfig"; sourceTree = "<group>"; };
 		B76F75F393F7A0400AA74FA5 /* Pods-smARTIK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smARTIK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-smARTIK/Pods-smARTIK.debug.xcconfig"; sourceTree = "<group>"; };
 		F200CA6A1E63DF4100352324 /* DeviceListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceListVC.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				F236ADB91E709A1700F76961 /* RoundedButton.swift */,
+				8DD3FFA21E89B9F60035ADE7 /* CustomBorder.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				F26CCE5F1E46756B00121D10 /* LightBulbVC.swift in Sources */,
 				F235B3961E529D6000E055A3 /* Authentification.swift in Sources */,
 				F236ADBA1E709A1700F76961 /* RoundedButton.swift in Sources */,
+				8DD3FFA31E89B9F60035ADE7 /* CustomBorder.swift in Sources */,
 				F22D18711E83512F00738900 /* PanelVC.swift in Sources */,
 				F22D18781E8356FE00738900 /* RoomListVC.swift in Sources */,
 				F21E51AB1E68E20A00407CD5 /* DeviceCell.swift in Sources */,
@@ -412,6 +416,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B76F75F393F7A0400AA74FA5 /* Pods-smARTIK.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2BULHRS882;
 				INFOPLIST_FILE = smARTIK/Info.plist;
@@ -426,6 +431,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B42631C14A0A1E68EC13BE45 /* Pods-smARTIK.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2BULHRS882;
 				INFOPLIST_FILE = smARTIK/Info.plist;

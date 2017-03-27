@@ -1,0 +1,6 @@
+framework module ArtikCloudSwift3 {
+  umbrella header "ArtikCloudSwift3-umbrella.h"
+
+  export *
+  module * { export * }
+}

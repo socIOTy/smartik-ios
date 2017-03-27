@@ -31,11 +31,11 @@ extension UIButton {
     
     @IBInspectable var radius: Int {
         get {
-            return cornerRadius
+            return Int(cornerRadius)
         }
         
         set {
-            cornerRadius = newValue
+            cornerRadius = CGFloat(newValue)
         }
     }
     
