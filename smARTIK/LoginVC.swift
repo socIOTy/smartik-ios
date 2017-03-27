@@ -80,7 +80,7 @@ class LoginVC: UIViewController, UIWebViewDelegate {
     
     func setBackgroundImage() {
         UIGraphicsBeginImageContext(self.view.frame.size)
-        UIImage(named: "login-screen-bg")?.draw(in: self.view.bounds)
+        UIImage(named: "login-screen-bg2")?.draw(in: self.view.bounds)
         
         let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         
