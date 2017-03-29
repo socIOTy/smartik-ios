@@ -44,4 +44,17 @@ extension UserDefaults {
         removeObject(forKey: "exp")
         synchronize()
     }
+    
+    func getDegree() -> Int {
+        if let degree = value(forKey: "degree") as? Int{
+            return degree
+        } else {
+            return 0
+        }
+    }
+    
+    func setDegree(degree: Int) {
+        set(degree, forKey: "degree")
+        synchronize()
+    }
 }

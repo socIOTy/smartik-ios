@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             for param in queryParams {
                 
-                NSLog(">>params: \(param.name) = \(param.value)")
+                //NSLog(">>params: \(param.name) = \(param.value)")
                 Authentification.credentials[param.name] = param.value
             }
             

@@ -14,6 +14,8 @@ class DeviceListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     @IBOutlet weak var tableView: UITableView!
     private var deviceList = [Device]()
     
+    private var userId: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,7 +24,29 @@ class DeviceListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         tableView.delegate = self
         tableView.dataSource = self
         
-        UsersAPI.getUserDevices(userId: "92b683fa99164650b7907f855acc100b").then { result -> Void in
+        self.tabBarController?.navigationItem.title = "Device List"
+        
+        UsersAPI.getSelf().then { result -> Void in
+            self.getDeviceList(result: result)
+            }.catch { error -> Void in
+                print(String(format: "%s", String(describing: error)))
+        }
+        
+//        UsersAPI.getUserDevices(userId: "92b683fa99164650b7907f855acc100b").then { result -> Void in
+//            let devices = result.data?.devices
+//            for device in devices! {
+//                self.deviceList.append(device)
+//            }
+//            self.animateTable()
+//            }.catch { error -> Void in
+//                
+//                print(String(format: "%s", String(describing: error)))
+//        }
+        
+    }
+    
+    func getDeviceList(result : UserEnvelope) {
+        UsersAPI.getUserDevices(userId: (result.data?.id)!).then { result -> Void in
             let devices = result.data?.devices
             for device in devices! {
                 self.deviceList.append(device)
@@ -32,8 +56,7 @@ class DeviceListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
                 
                 print(String(format: "%s", String(describing: error)))
         }
-        self.tabBarController?.navigationItem.title = "Device List"
-        
+
     }
     
     override func viewWillAppear(_ animated: Bool) {

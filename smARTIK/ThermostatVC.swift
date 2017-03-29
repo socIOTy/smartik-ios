@@ -22,6 +22,7 @@ class ThermostatVC: UIViewController {
     
     var currentTemp: Double = 20
     var currentDegree: Character = "C"
+    var state: String = "setOff"
     
     
     @IBOutlet weak var tempSlider: UISlider!
@@ -42,8 +43,8 @@ class ThermostatVC: UIViewController {
         
         setBackgroundImage()
         self.navigationItem.title = device.name
-
-        tempSetup(temp: currentTemp, degree: currentDegree)
+        
+        onGetMessage()
         
     }
     
@@ -52,9 +53,11 @@ class ThermostatVC: UIViewController {
     @IBAction func degreeChanged(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
             currentDegree = "C"
+            UserDefaults.standard.setDegree(degree: 0)
             fToC()
         } else {
             currentDegree = "F"
+            UserDefaults.standard.setDegree(degree: 1)
             cToF()
         }
         sendTemp()
@@ -63,13 +66,16 @@ class ThermostatVC: UIViewController {
     
     @IBAction func tempChanged(_ sender: UISlider) {
         currentTemp = Double(sender.value).rounded()
-        sendTemp()
         tempSetup(temp: currentTemp, degree: currentDegree)
     }
     
     
+    @IBAction func tempChangeFinished(_ sender: UISlider) {
+        sendTemp()
+    }
+    
+    
     @IBAction func stateChanged(_ sender: UISegmentedControl) {
-        var state = ""
         switch sender.selectedSegmentIndex {
         case 0: state = "setOff"
                 break
@@ -175,6 +181,94 @@ class ThermostatVC: UIViewController {
         UIGraphicsEndImageContext()
         
         self.view.backgroundColor = UIColor(patternImage: image)
+    }
+    
+    func onGetMessage() {
+        
+        
+        let sdid = device.id
+        
+        //ARTIK Cloud MessagesAPI for sending / receiving message
+        
+        MessagesAPI.getLastNormalizedMessages(sdids: sdid).then { response -> Void in
+            
+            let normalizedMessage = response.data! as [NormalizedMessage]
+            
+            // move along if no messages
+            if normalizedMessage.isEmpty == true {
+                
+                print("No messages")
+                return
+                
+            }
+            
+            let responseObject:[String:String] = [
+                "mid": String(describing: normalizedMessage[0].mid!),
+                "ts": String(describing: normalizedMessage[0].ts!),
+                "sdtid": String(describing: normalizedMessage[0].sdtid!),
+                "data": String(describing: normalizedMessage[0].data!)
+            ]
+            print(responseObject["data"]!)
+            let data = normalizedMessage[0].data!
+            
+            self.currentTemp = Double(data["target_temperature_c"] as! Int)
+            let heat = data["can_heat"] as! Bool
+            let cool = data["can_cool"] as! Bool
+            if heat && cool {
+                self.state = "setHeatCoolMode"
+            } else {
+                if heat {
+                    self.state = "setHeatMode"
+                } else if cool {
+                    self.state = "setCoolMode"
+                } else {
+                    self.state = "setOff"
+                }
+            }
+            
+            if (UserDefaults.standard.getDegree() == 0) {
+                self.currentDegree = "C"
+                self.temperatureSegment.selectedSegmentIndex = 0
+            } else if (UserDefaults.standard.getDegree() == 1) {
+                self.currentDegree = "F"
+                self.cToF()
+                self.temperatureSegment.selectedSegmentIndex = 1
+            }
+            
+            self.initUI()
+            
+            //print(responseObject.description)
+            
+            }.catch { error -> Void in
+                
+                print(String(format: "%s", String(describing: error)))
+                print("Get Message Error: " + String(describing: error))
+        }
+        
+    }
+    
+    func setThermostatState() {
+        switch(state) {
+            case "setOff":
+                stateSegment.selectedSegmentIndex = 0
+                break
+            case "setHeatCoolMode":
+                stateSegment.selectedSegmentIndex = 1
+                break
+            case "setHeatMode":
+                stateSegment.selectedSegmentIndex = 2
+                break
+            case "setCoolMode":
+                stateSegment.selectedSegmentIndex = 3
+                break
+            default:
+                stateSegment.selectedSegmentIndex = 0
+        }
+    }
+
+    func initUI() {
+        tempSetup(temp: currentTemp, degree: currentDegree)
+        setThermostatState()
     }
 
 }
