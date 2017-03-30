@@ -174,7 +174,7 @@ class ThermostatVC: UIViewController {
     
     func setBackgroundImage() {
         UIGraphicsBeginImageContext(self.view.frame.size)
-        UIImage(named: "room-bg")?.draw(in: self.view.bounds)
+        UIImage(named: "bedroom")?.draw(in: self.view.bounds)
         
         let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         
