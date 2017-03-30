@@ -13,6 +13,10 @@ class ScenariosVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.navigationItem.rightBarButtonItem = nil
         self.tabBarController?.navigationItem.title = "Scenario List"
     }
 

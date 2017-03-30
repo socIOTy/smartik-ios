@@ -1,4 +1,4 @@
-//
+        //
 //  LoginVC.swift
 //  smARTIK
 //
@@ -61,7 +61,6 @@ class LoginVC: UIViewController, UIWebViewDelegate {
                 
                 for param in queryParams {
                     
-                    NSLog(">>params: \(param.name) = \(param.value)")
                     Authentification.credentials[param.name] = param.value
                 }
                 

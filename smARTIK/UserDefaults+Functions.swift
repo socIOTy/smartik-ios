@@ -57,4 +57,17 @@ extension UserDefaults {
         set(degree, forKey: "degree")
         synchronize()
     }
+    
+    func getUserId() -> String {
+        if let id = string(forKey: "userid") {
+            return id
+        } else {
+            return ""
+        }
+    }
+    
+    func setUserId(id: String) {
+        set(id, forKey: "userid")
+        synchronize()
+    }
 }
