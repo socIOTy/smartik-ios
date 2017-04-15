@@ -20,4 +20,6 @@ class Metadata {
     static let deviceTypes: [String:String] = ["dt71c282d4fad94a69b22fa6d1e449fbbb":"LightBulbVC", "dt5247379d38fa4ac78e4723f8e92de681":"ThermostatVC"]
     
     static let devicesTypesWithNames: [String:String] = ["Light Bulb": "dt71c282d4fad94a69b22fa6d1e449fbbb", "Thermostat" : "dt5247379d38fa4ac78e4723f8e92de681"]
+    
+    static let devicesRestURL = "https://smartik.herokuapp.com/rest/device"
 }

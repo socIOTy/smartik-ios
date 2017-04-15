@@ -8,6 +8,7 @@
 
 import UIKit
 import ArtikCloudSwift3
+import Alamofire
 
 class DeviceListVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource {
 
@@ -97,22 +98,44 @@ class DeviceListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         device.name = name
         device.uid = UserDefaults.standard.getUserId()
         device.dtid = dtid
-        DevicesAPI.addDevice(device: device).then { Void in
-            self.getDeviceList(userId: UserDefaults.standard.getUserId())
+        DevicesAPI.addDevice(device: device).then { result in
+            self.addDeviceREST(id:(result.data?.id!)!, floor: 0, room: "Living room")
+        }.catch { error -> Void in
+            print(String(format: "%s", String(describing: error)))
+        }
+
+    }
+    
+    func addDeviceREST(id: String, floor: Int, room: String) {
+        let params : [String:Any] = [
+            "deviceId":id,
+            "floorNumber":floor,
+            "roomName":room
+        ]
+        Alamofire.request(Metadata.devicesRestURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).response(completionHandler: { response in
+            print(response)
+        })
+        self.getDeviceList(userId: UserDefaults.standard.getUserId())
+    }
+    
+    func deleteDevice(index: Int) {
+        let id = deviceList[index].id!
+        DevicesAPI.deleteDevice(deviceId: id).then { Void in
+            self.deleteDeviceREST(id: id)
             }.catch { error -> Void in
                 print(String(format: "%s", String(describing: error)))
         }
 
     }
     
-    func deleteDevice(index: Int) {
-        let id = deviceList[index].id!
-        DevicesAPI.deleteDevice(deviceId: id).then { Void in
-            self.getDeviceList(userId: UserDefaults.standard.getUserId())
-            }.catch { error -> Void in
-                print(String(format: "%s", String(describing: error)))
-        }
-
+    func deleteDeviceREST(id: String) {
+        let params : [String:Any] = [
+            "deviceId":id
+        ]
+        Alamofire.request(Metadata.devicesRestURL, method: .delete, parameters: params, encoding: JSONEncoding.default, headers: nil).response(completionHandler: { response in
+            print(response)
+        })
+        self.getDeviceList(userId: UserDefaults.standard.getUserId())
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -176,8 +199,8 @@ class DeviceListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         
         var index = 0
         
-        for a in cells {
-            let cell: DeviceCell = a as! DeviceCell
+        for i in cells {
+            let cell: DeviceCell = i as! DeviceCell
             UIView.animate(withDuration: 1.5, delay: 0.05*Double(index), usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: [], animations: {
                 cell.transform = CGAffineTransform(translationX: 0, y: 0);
             }, completion: nil)
