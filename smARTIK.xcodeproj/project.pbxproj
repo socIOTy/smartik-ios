@@ -25,6 +25,7 @@
 		F26CCE621E46756B00121D10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F26CCE601E46756B00121D10 /* Main.storyboard */; };
 		F26CCE641E46756B00121D10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F26CCE631E46756B00121D10 /* Assets.xcassets */; };
 		F26CCE671E46756B00121D10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F26CCE651E46756B00121D10 /* LaunchScreen.storyboard */; };
+		F2C60FF91EA46C2400F3CE49 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C60FF81EA46C2400F3CE49 /* OnboardingVC.swift */; };
 		F2E2030A1E63DB3400E720F1 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E203091E63DB3400E720F1 /* LoginVC.swift */; };
 		F2E5DA871E7A0B6A0090502E /* UserDefaults+Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E5DA861E7A0B6A0090502E /* UserDefaults+Functions.swift */; };
 /* End PBXBuildFile section */
@@ -52,6 +53,7 @@
 		F26CCE631E46756B00121D10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F26CCE661E46756B00121D10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F26CCE681E46756B00121D10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2C60FF81EA46C2400F3CE49 /* OnboardingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
 		F2E203091E63DB3400E720F1 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		F2E5DA861E7A0B6A0090502E /* UserDefaults+Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Functions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +114,7 @@
 				F22D18751E8356CC00738900 /* StatusVC.swift */,
 				F22D18771E8356FE00738900 /* RoomListVC.swift */,
 				F22D18791E83572100738900 /* ScenariosVC.swift */,
+				F2C60FF81EA46C2400F3CE49 /* OnboardingVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				F236ADBA1E709A1700F76961 /* RoundedButton.swift in Sources */,
 				8DD3FFA31E89B9F60035ADE7 /* CustomBorder.swift in Sources */,
 				F22D18711E83512F00738900 /* PanelVC.swift in Sources */,
+				F2C60FF91EA46C2400F3CE49 /* OnboardingVC.swift in Sources */,
 				F22D18781E8356FE00738900 /* RoomListVC.swift in Sources */,
 				F21E51AB1E68E20A00407CD5 /* DeviceCell.swift in Sources */,
 				F235B3971E529D6000E055A3 /* Metadata.swift in Sources */,

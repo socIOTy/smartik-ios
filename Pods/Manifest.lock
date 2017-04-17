@@ -4,6 +4,7 @@ PODS:
     - Alamofire (~> 4.0.1)
     - PromiseKit (~> 4.0)
   - CircleSlider (0.5.0)
+  - paper-onboarding (2.0.1)
   - PromiseKit (4.0.4):
     - PromiseKit/Foundation (= 4.0.4)
     - PromiseKit/QuartzCore (= 4.0.4)
@@ -19,6 +20,7 @@ PODS:
 DEPENDENCIES:
   - ArtikCloudSwift3 (from `https://github.com/artikcloud/artikcloud-swift3.git`)
   - CircleSlider
+  - paper-onboarding (~> 2.0.1)
 
 EXTERNAL SOURCES:
   ArtikCloudSwift3:
@@ -33,8 +35,9 @@ SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   ArtikCloudSwift3: af51b70513c9cc0f5e98cf7cd454df7d3f7cb34e
   CircleSlider: c6eca7297b40e3a638395a938d1b16b8c4710821
+  paper-onboarding: a8e001214d9ce9decf78e160b3823f396dbd51ac
   PromiseKit: 8e8ee39d33ff199d92a1a883b5396f6285be6c91
 
-PODFILE CHECKSUM: f98f4006a1e46998c86a8a7783c98125251ee4bc
+PODFILE CHECKSUM: f132453952f815b78dda8994dfd1cdfa11c6cec9
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.0

@@ -9,6 +9,16 @@
 import Foundation
 
 extension UserDefaults {
+    
+    func isOnboardingCompleted() -> Bool {
+        return bool(forKey: "onboardingCompleted")
+    }
+    
+    func setOnboardingCompleted() {
+        set(true, forKey: "onboardingCompleted")
+        synchronize()
+    }
+    
     func setToken(token: String) {
         set(token, forKey: "token")
         synchronize()
