@@ -20,6 +20,9 @@
 		F235B3971E529D6000E055A3 /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = F235B3951E529D6000E055A3 /* Metadata.swift */; };
 		F236ADB81E708A7100F76961 /* switch-sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = F236ADB71E708A7100F76961 /* switch-sound.wav */; };
 		F236ADBA1E709A1700F76961 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F236ADB91E709A1700F76961 /* RoundedButton.swift */; };
+		F25552E51EA6BBF6004FE05F /* Scenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25552E41EA6BBF6004FE05F /* Scenario.swift */; };
+		F25552E71EA6BC01004FE05F /* ScenarioAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25552E61EA6BC01004FE05F /* ScenarioAction.swift */; };
+		F25552E91EA6BEE9004FE05F /* ScenarioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25552E81EA6BEE9004FE05F /* ScenarioCell.swift */; };
 		F26CCE5D1E46756B00121D10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26CCE5C1E46756B00121D10 /* AppDelegate.swift */; };
 		F26CCE5F1E46756B00121D10 /* LightBulbVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26CCE5E1E46756B00121D10 /* LightBulbVC.swift */; };
 		F26CCE621E46756B00121D10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F26CCE601E46756B00121D10 /* Main.storyboard */; };
@@ -46,6 +49,9 @@
 		F235B3951E529D6000E055A3 /* Metadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
 		F236ADB71E708A7100F76961 /* switch-sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "switch-sound.wav"; sourceTree = "<group>"; };
 		F236ADB91E709A1700F76961 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		F25552E41EA6BBF6004FE05F /* Scenario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scenario.swift; sourceTree = "<group>"; };
+		F25552E61EA6BC01004FE05F /* ScenarioAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenarioAction.swift; sourceTree = "<group>"; };
+		F25552E81EA6BEE9004FE05F /* ScenarioCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenarioCell.swift; sourceTree = "<group>"; };
 		F26CCE591E46756B00121D10 /* smARTIK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smARTIK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F26CCE5C1E46756B00121D10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F26CCE5E1E46756B00121D10 /* LightBulbVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightBulbVC.swift; sourceTree = "<group>"; };
@@ -90,6 +96,8 @@
 		F22D18721E83565700738900 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F25552E41EA6BBF6004FE05F /* Scenario.swift */,
+				F25552E61EA6BC01004FE05F /* ScenarioAction.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -97,8 +105,10 @@
 		F22D18731E83565C00738900 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F21E51AA1E68E20A00407CD5 /* DeviceCell.swift */,
 				F236ADB91E709A1700F76961 /* RoundedButton.swift */,
 				8DD3FFA21E89B9F60035ADE7 /* CustomBorder.swift */,
+				F25552E81EA6BEE9004FE05F /* ScenarioCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -151,7 +161,6 @@
 				F235B3951E529D6000E055A3 /* Metadata.swift */,
 				F26CCE651E46756B00121D10 /* LaunchScreen.storyboard */,
 				F26CCE681E46756B00121D10 /* Info.plist */,
-				F21E51AA1E68E20A00407CD5 /* DeviceCell.swift */,
 				F2E5DA861E7A0B6A0090502E /* UserDefaults+Functions.swift */,
 			);
 			path = smARTIK;
@@ -287,6 +296,7 @@
 				F22D187A1E83572100738900 /* ScenariosVC.swift in Sources */,
 				F23413201E69F8D1006021F1 /* ThermostatVC.swift in Sources */,
 				F26CCE5F1E46756B00121D10 /* LightBulbVC.swift in Sources */,
+				F25552E51EA6BBF6004FE05F /* Scenario.swift in Sources */,
 				F235B3961E529D6000E055A3 /* Authentification.swift in Sources */,
 				F236ADBA1E709A1700F76961 /* RoundedButton.swift in Sources */,
 				8DD3FFA31E89B9F60035ADE7 /* CustomBorder.swift in Sources */,
@@ -295,7 +305,9 @@
 				F22D18781E8356FE00738900 /* RoomListVC.swift in Sources */,
 				F21E51AB1E68E20A00407CD5 /* DeviceCell.swift in Sources */,
 				F235B3971E529D6000E055A3 /* Metadata.swift in Sources */,
+				F25552E91EA6BEE9004FE05F /* ScenarioCell.swift in Sources */,
 				F26CCE5D1E46756B00121D10 /* AppDelegate.swift in Sources */,
+				F25552E71EA6BC01004FE05F /* ScenarioAction.swift in Sources */,
 				F22D18761E8356CC00738900 /* StatusVC.swift in Sources */,
 				F2E2030A1E63DB3400E720F1 /* LoginVC.swift in Sources */,
 			);

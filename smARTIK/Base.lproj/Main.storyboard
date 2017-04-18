@@ -373,20 +373,79 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scenarios are coming" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PS1-Hc-Kem">
-                                <rect key="frame" x="84" y="351" width="246" height="35"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="25"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kp7-Rm-cMp">
+                                <rect key="frame" x="20" y="84" width="374" height="583"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EyJ-bL-sQ1">
+                                    <size key="itemSize" width="180" height="180"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ScenarioCell" id="0al-0a-5fz" customClass="ScenarioCell" customModule="smARTIK" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="energy_saving" translatesAutoresizingMaskIntoConstraints="NO" id="kDI-uv-bcY">
+                                                    <rect key="frame" x="55" y="38" width="70" height="70"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="70" id="kjl-AL-yAY"/>
+                                                        <constraint firstAttribute="width" constant="70" id="rti-mT-8VL"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pp9-L8-C3j">
+                                                    <rect key="frame" x="13" y="145" width="154" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="k08-rN-oR4"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottomMargin" secondItem="Pp9-L8-C3j" secondAttribute="bottom" constant="2" id="Bp6-8C-G04"/>
+                                            <constraint firstItem="kDI-uv-bcY" firstAttribute="top" secondItem="0al-0a-5fz" secondAttribute="topMargin" constant="30" id="Yqn-Fx-f3E"/>
+                                            <constraint firstItem="kDI-uv-bcY" firstAttribute="centerX" secondItem="0al-0a-5fz" secondAttribute="centerX" id="izJ-Cu-kcB"/>
+                                            <constraint firstItem="Pp9-L8-C3j" firstAttribute="leading" secondItem="0al-0a-5fz" secondAttribute="leadingMargin" constant="5" id="t8M-YV-Qsv"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="Pp9-L8-C3j" secondAttribute="trailing" constant="5" id="wK1-oM-tPB"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="scenarioImage" destination="kDI-uv-bcY" id="FiH-KI-LAe"/>
+                                            <outlet property="scenarioTitle" destination="Pp9-L8-C3j" id="6Ls-Ey-gcc"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="PS1-Hc-Kem" firstAttribute="centerY" secondItem="F50-MT-k8b" secondAttribute="centerY" id="8lM-Pe-hBH"/>
-                            <constraint firstItem="PS1-Hc-Kem" firstAttribute="centerX" secondItem="F50-MT-k8b" secondAttribute="centerX" id="ikZ-R7-5Pp"/>
+                            <constraint firstItem="LbD-Qn-nsV" firstAttribute="top" secondItem="kp7-Rm-cMp" secondAttribute="bottom" constant="20" id="KcX-jt-1aS"/>
+                            <constraint firstAttribute="trailing" secondItem="kp7-Rm-cMp" secondAttribute="trailing" constant="20" id="XHa-rG-sTj"/>
+                            <constraint firstItem="kp7-Rm-cMp" firstAttribute="leading" secondItem="F50-MT-k8b" secondAttribute="leading" constant="20" id="tUf-Jd-7Jc"/>
+                            <constraint firstItem="kp7-Rm-cMp" firstAttribute="top" secondItem="Bg7-mE-6K9" secondAttribute="bottom" constant="20" id="vSh-mG-0wZ"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Scenarios" image="ic_scenarios" selectedImage="ic_scenarios" id="wds-Yh-ZEw"/>
+                    <connections>
+                        <outlet property="collectionView" destination="kp7-Rm-cMp" id="STQ-fC-Kfa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PyZ-vi-Lnj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -571,6 +630,7 @@
     <resources>
         <image name="LOGO_White" width="1" height="1"/>
         <image name="bulb-off" width="497" height="512"/>
+        <image name="energy_saving" width="24" height="24"/>
         <image name="ic_devices_outline" width="24" height="24"/>
         <image name="ic_rooms" width="24" height="24"/>
         <image name="ic_scenarios" width="24" height="24"/>
