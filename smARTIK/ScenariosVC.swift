@@ -39,6 +39,29 @@ class ScenariosVC: UIViewController, UICollectionViewDataSource, UICollectionVie
         return scenarios.count
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch scenarios[indexPath.row].action {
+            case .lightOn:
+                ScenariosService.setLightsOn()
+                break
+            case .lightOff:
+                ScenariosService.setLightsOff()
+                break
+            case .stateHome:
+                ScenariosService.setHome()
+                break
+            case .stateAway:
+                ScenariosService.setAway()
+                break
+            case .energySaving:
+                ScenariosService.setSaving()
+                break
+            default:
+                break
+            
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ScenarioCell", for: indexPath) as? ScenarioCell {
             cell.configureCell(scenario: scenarios[indexPath.row])

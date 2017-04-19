@@ -83,8 +83,8 @@
                                     <action selector="loginPressed:" destination="XVt-Hm-PKz" eventType="touchUpInside" id="omq-d0-Qf2"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="LOGO_White" translatesAutoresizingMaskIntoConstraints="NO" id="zfp-LW-rcG">
-                                <rect key="frame" x="116" y="116" width="183" height="205"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO_White" translatesAutoresizingMaskIntoConstraints="NO" id="zfp-LW-rcG">
+                                <rect key="frame" x="98" y="117" width="219" height="205"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -397,7 +397,7 @@
                                                         <constraint firstAttribute="width" constant="70" id="rti-mT-8VL"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pp9-L8-C3j">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Pp9-L8-C3j">
                                                     <rect key="frame" x="13" y="145" width="154" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="k08-rN-oR4"/>

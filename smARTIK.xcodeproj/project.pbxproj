@@ -23,6 +23,7 @@
 		F25552E51EA6BBF6004FE05F /* Scenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25552E41EA6BBF6004FE05F /* Scenario.swift */; };
 		F25552E71EA6BC01004FE05F /* ScenarioAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25552E61EA6BC01004FE05F /* ScenarioAction.swift */; };
 		F25552E91EA6BEE9004FE05F /* ScenarioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25552E81EA6BEE9004FE05F /* ScenarioCell.swift */; };
+		F25552EB1EA6D7AC004FE05F /* ScenariosService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25552EA1EA6D7AC004FE05F /* ScenariosService.swift */; };
 		F26CCE5D1E46756B00121D10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26CCE5C1E46756B00121D10 /* AppDelegate.swift */; };
 		F26CCE5F1E46756B00121D10 /* LightBulbVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26CCE5E1E46756B00121D10 /* LightBulbVC.swift */; };
 		F26CCE621E46756B00121D10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F26CCE601E46756B00121D10 /* Main.storyboard */; };
@@ -52,6 +53,7 @@
 		F25552E41EA6BBF6004FE05F /* Scenario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scenario.swift; sourceTree = "<group>"; };
 		F25552E61EA6BC01004FE05F /* ScenarioAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenarioAction.swift; sourceTree = "<group>"; };
 		F25552E81EA6BEE9004FE05F /* ScenarioCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenarioCell.swift; sourceTree = "<group>"; };
+		F25552EA1EA6D7AC004FE05F /* ScenariosService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenariosService.swift; sourceTree = "<group>"; };
 		F26CCE591E46756B00121D10 /* smARTIK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smARTIK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F26CCE5C1E46756B00121D10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F26CCE5E1E46756B00121D10 /* LightBulbVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightBulbVC.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 		F22D18721E83565700738900 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F25552EA1EA6D7AC004FE05F /* ScenariosService.swift */,
 				F25552E41EA6BBF6004FE05F /* Scenario.swift */,
 				F25552E61EA6BC01004FE05F /* ScenarioAction.swift */,
 			);
@@ -300,6 +303,7 @@
 				F235B3961E529D6000E055A3 /* Authentification.swift in Sources */,
 				F236ADBA1E709A1700F76961 /* RoundedButton.swift in Sources */,
 				8DD3FFA31E89B9F60035ADE7 /* CustomBorder.swift in Sources */,
+				F25552EB1EA6D7AC004FE05F /* ScenariosService.swift in Sources */,
 				F22D18711E83512F00738900 /* PanelVC.swift in Sources */,
 				F2C60FF91EA46C2400F3CE49 /* OnboardingVC.swift in Sources */,
 				F22D18781E8356FE00738900 /* RoomListVC.swift in Sources */,
