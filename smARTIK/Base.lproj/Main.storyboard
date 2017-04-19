@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bSp-eF-PV0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bSp-eF-PV0">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -141,7 +141,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fww-iS-j3U">
-                                                    <rect key="frame" x="23" y="8" width="368" height="60"/>
+                                                    <rect key="frame" x="23" y="8" width="329" height="60"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="27"/>
                                                     <color key="textColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -348,23 +348,39 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Welcome Home!" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tKH-Yp-9uy">
                                 <rect key="frame" x="31" y="110" width="276" height="57"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="35"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="29"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfN-rB-Wps">
+                                <rect key="frame" x="16" y="307" width="343" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Vxr-4d-6b8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="pfN-rB-Wps" firstAttribute="top" secondItem="tXu-Jm-Q0w" secondAttribute="bottom" constant="20" id="2TW-eD-jSq"/>
                             <constraint firstItem="tXu-Jm-Q0w" firstAttribute="leading" secondItem="0pC-oh-8FL" secondAttribute="leading" id="46R-Va-POy"/>
                             <constraint firstItem="tXu-Jm-Q0w" firstAttribute="top" secondItem="6Nz-tc-aPT" secondAttribute="bottom" id="7XX-wr-ue2"/>
                             <constraint firstItem="tKH-Yp-9uy" firstAttribute="top" secondItem="6Nz-tc-aPT" secondAttribute="bottom" constant="46" id="EZQ-RD-yu6"/>
                             <constraint firstItem="pss-9q-Uh3" firstAttribute="top" secondItem="tXu-Jm-Q0w" secondAttribute="bottom" constant="331" id="Gtx-hW-l0w"/>
                             <constraint firstItem="pss-9q-Uh3" firstAttribute="top" secondItem="tKH-Yp-9uy" secondAttribute="bottom" constant="451" id="JKE-UL-A7r"/>
                             <constraint firstAttribute="trailing" secondItem="tXu-Jm-Q0w" secondAttribute="trailing" id="Y5m-IA-xK3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pfN-rB-Wps" secondAttribute="trailing" id="ZOS-FK-d0o"/>
+                            <constraint firstItem="pfN-rB-Wps" firstAttribute="leading" secondItem="0pC-oh-8FL" secondAttribute="leadingMargin" id="d6J-xU-oAY"/>
                             <constraint firstItem="tKH-Yp-9uy" firstAttribute="leading" secondItem="0pC-oh-8FL" secondAttribute="leadingMargin" constant="15" id="n6T-X1-9Sd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tKH-Yp-9uy" secondAttribute="trailing" constant="52" id="xxV-Ko-XQT"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Status" image="ic_status" selectedImage="ic_status" id="7sb-6V-4kS"/>
+                    <connections>
+                        <outlet property="devicesLabel" destination="pfN-rB-Wps" id="v3W-hY-yEM"/>
+                        <outlet property="greetingLabel" destination="tKH-Yp-9uy" id="o8u-dT-wSt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tUD-73-Dw4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,13 +7,21 @@
 //
 
 import UIKit
+import ArtikCloudSwift3
 
 class StatusVC: UIViewController {
 
+    @IBOutlet weak var greetingLabel: UITextField!
+    @IBOutlet weak var devicesLabel: UILabel!
+    
+    var fullname: String = ""
+    var deviceCount: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackgroundImage()
-
+        
+        getStatus()
         
     }
     
@@ -31,6 +39,30 @@ class StatusVC: UIViewController {
         UIGraphicsEndImageContext()
         
         self.view.backgroundColor = UIColor(patternImage: image)
+    }
+    
+    func getStatus() {
+        UsersAPI.getSelf().then { result -> Void in
+            self.fullname = (result.data?.fullName!)!
+            self.getDevices()
+            }.catch { error -> Void in
+                print(String(format: "%s", String(describing: error)))
+        }
+
+    }
+    
+    func getDevices() {
+        UsersAPI.getUserDevices(userId: UserDefaults.standard.getUserId()).then { result -> Void in
+            self.deviceCount = (result.data?.devices?.count)!
+            self.updateUI()
+            }.catch { error -> Void in
+                print(String(format: "%s", String(describing: error)))
+        }
+    }
+    
+    func updateUI() {
+        greetingLabel.text = "Welcome home, \(fullname)!"
+        devicesLabel.text = "You have \(deviceCount)/\(deviceCount) active devices"
     }
 
 }
