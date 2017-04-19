@@ -17,6 +17,9 @@ class ScenariosVC: UIViewController, UICollectionViewDataSource, UICollectionVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setBackgroundImage()
+        //setBackgroundImageCollectionV()
+        
         collectionView.dataSource = self
         collectionView.delegate = self
         scenarios.append(Scenario(name: "Turn off the lights", action: .lightOff))
@@ -24,6 +27,39 @@ class ScenariosVC: UIViewController, UICollectionViewDataSource, UICollectionVie
         scenarios.append(Scenario(name: "Energy saving mode", action: .energySaving))
         scenarios.append(Scenario(name: "Mode \"Home\"", action: .stateHome))
         scenarios.append(Scenario(name: "Mode \"Away\"", action: .stateAway))
+    }
+    
+    func setBackgroundImage() {
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "background-gen")?.draw(in: self.view.bounds)
+        
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        
+        UIGraphicsEndImageContext()
+        
+        self.view.backgroundColor = UIColor(patternImage: image)
+    }
+    
+    func setBackgroundImageCollectionV() {
+        UIGraphicsBeginImageContext(self.collectionView.frame.size)
+        UIImage(named: "background-gen")?.draw(in: self.collectionView.bounds)
+        
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        
+        UIGraphicsEndImageContext()
+        
+        self.collectionView.backgroundColor = UIColor(patternImage: image)
+    }
+    
+    func setBackgroundImageTableV() {
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "background-gen")?.draw(in: self.view.bounds)
+        
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        
+        UIGraphicsEndImageContext()
+        
+        self.view.backgroundColor = UIColor(patternImage: image)
     }
     
     override func viewWillAppear(_ animated: Bool) {

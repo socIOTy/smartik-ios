@@ -79,12 +79,14 @@ class OnboardingVC: UIViewController, PaperOnboardingDataSource, PaperOnboarding
         let titleFont = UIFont(name: "Nunito-Bold", size: 36.0) ?? UIFont.boldSystemFont(ofSize: 36.0)
         let descriptionFont = UIFont(name: "OpenSans-Regular", size: 14.0) ?? UIFont.systemFont(ofSize: 14.0)
         return [
-            ("LOGO_GREY", "Welcome", "To work with our app you need to create a Samsung ARTIK Cloud account first", "key-icon", UIColor(red:0.71, green:0.71, blue:0.71, alpha:1.00), UIColor.white, UIColor.white, titleFont, descriptionFont),
+            ("logo", "Welcome", "Start to work with our app by creating a Samsung ARTIK Cloud account first", "key-icon", UIColor(red:251/255, green:192/255, blue:45/255, alpha:1.00), UIColor.white, UIColor.white, titleFont, descriptionFont),
             ("rooms-img", "Rooms", "Set up rooms and control all devices assigned", "key-icon", UIColor(red:0.40, green:0.56, blue:0.71, alpha:1.00), UIColor.white, UIColor.white, titleFont, descriptionFont),
             ("devices-img", "Devices", "Monitor and control all your devices from the app", "electrisity-icon", UIColor(red:0.40, green:0.69, blue:0.71, alpha:1.00), UIColor.white, UIColor.white, titleFont, descriptionFont),
             ("scenarios-img", "Scenarios", "Design and Apply scenarios to control action flow of your smart devices", "pen-icon", UIColor(red:0.61, green:0.56, blue:0.74, alpha:1.00), UIColor.white, UIColor.white, titleFont, descriptionFont)
             ][index]
     }
+    
+
     
     func onboardingWillTransitonToIndex(_ index: Int) {
         //skipButton.isHidden = index == 3 ? false : true

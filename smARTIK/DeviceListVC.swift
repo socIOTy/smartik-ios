@@ -13,6 +13,8 @@ import Alamofire
 class DeviceListVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    
+    
     private var deviceList = [Device]()
     
     private var userId: String!
@@ -22,7 +24,7 @@ class DeviceListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //setBackgroundImage()
+        setBackgroundImage()
 
         tableView.delegate = self
         tableView.dataSource = self
@@ -207,17 +209,19 @@ class DeviceListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             index += 1
         }
     }
+
     
     func setBackgroundImage() {
-        UIGraphicsBeginImageContext(self.tableView.frame.size)
-        UIImage(named: "list-bg")?.draw(in: self.tableView.bounds)
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "background-gen")?.draw(in: self.view.bounds)
         
         let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         
         UIGraphicsEndImageContext()
         
-        self.tableView.backgroundColor = UIColor(patternImage: image)
+        self.view.backgroundColor = UIColor(patternImage: image)
     }
+    
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return devicesTypesData.count

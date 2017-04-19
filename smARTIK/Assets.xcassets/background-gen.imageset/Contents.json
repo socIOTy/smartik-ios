@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "login_screen_bg.png",
+      "filename" : "background-gen.jpg",
       "scale" : "1x"
     },
     {
