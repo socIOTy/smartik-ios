@@ -43,6 +43,7 @@ class StatusVC: UIViewController {
     
     func getStatus() {
         UsersAPI.getSelf().then { result -> Void in
+            UserDefaults.standard.setEmail(email: (result.data?.email)!)
             self.fullname = (result.data?.fullName!)!
             self.getDevices()
             }.catch { error -> Void in

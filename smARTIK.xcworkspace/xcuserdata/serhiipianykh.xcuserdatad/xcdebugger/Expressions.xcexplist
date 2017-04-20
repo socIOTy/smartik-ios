@@ -10,5 +10,13 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "RoomListVC.getMap() -&gt; ():RoomListVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Metadata.deviceMapURL+UserDefaults.standard.getEmail()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>

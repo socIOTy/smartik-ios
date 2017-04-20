@@ -30,6 +30,7 @@
 		F26CCE641E46756B00121D10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F26CCE631E46756B00121D10 /* Assets.xcassets */; };
 		F26CCE671E46756B00121D10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F26CCE651E46756B00121D10 /* LaunchScreen.storyboard */; };
 		F2C60FF91EA46C2400F3CE49 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C60FF81EA46C2400F3CE49 /* OnboardingVC.swift */; };
+		F2D5B8A01EA8203500D77EA4 /* RoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D5B89F1EA8203500D77EA4 /* RoomCell.swift */; };
 		F2E2030A1E63DB3400E720F1 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E203091E63DB3400E720F1 /* LoginVC.swift */; };
 		F2E424841EA7EFCF0053783F /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E424831EA7EFCF0053783F /* Room.swift */; };
 		F2E424861EA7F1FF0053783F /* Floor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E424851EA7F1FF0053783F /* Floor.swift */; };
@@ -65,6 +66,7 @@
 		F26CCE661E46756B00121D10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F26CCE681E46756B00121D10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2C60FF81EA46C2400F3CE49 /* OnboardingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
+		F2D5B89F1EA8203500D77EA4 /* RoomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomCell.swift; sourceTree = "<group>"; };
 		F2E203091E63DB3400E720F1 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		F2E424831EA7EFCF0053783F /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		F2E424851EA7F1FF0053783F /* Floor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Floor.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				F236ADB91E709A1700F76961 /* RoundedButton.swift */,
 				8DD3FFA21E89B9F60035ADE7 /* CustomBorder.swift */,
 				F25552E81EA6BEE9004FE05F /* ScenarioCell.swift */,
+				F2D5B89F1EA8203500D77EA4 /* RoomCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				F26CCE5D1E46756B00121D10 /* AppDelegate.swift in Sources */,
 				F25552E71EA6BC01004FE05F /* ScenarioAction.swift in Sources */,
 				F22D18761E8356CC00738900 /* StatusVC.swift in Sources */,
+				F2D5B8A01EA8203500D77EA4 /* RoomCell.swift in Sources */,
 				F2E2030A1E63DB3400E720F1 /* LoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

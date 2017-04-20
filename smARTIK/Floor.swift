@@ -9,9 +9,9 @@
 import Foundation
 
 class Floor {
-    private var _rooms: Set<Room>!
+    private var _rooms: [Room]!
     
-    var rooms: Set<Room> {
+    var rooms: [Room] {
         get {
             if _rooms.isEmpty {
                 return []
@@ -25,19 +25,16 @@ class Floor {
     }
     
     func addRoom(room: Room) {
-        self._rooms.insert(room)
-    }
-    
-    func removeRoom(room: Room) {
-        self._rooms.remove(room)
+        self._rooms.append(room)
     }
     
     func count() -> Int {
         return _rooms.count
     }
     
-    init(rooms: Set<Room>) {
-        _rooms = Set<Room>(rooms)
+    init(rooms: [Room]) {
+        _rooms = rooms
     }
+    
     
 }

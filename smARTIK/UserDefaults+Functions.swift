@@ -80,4 +80,17 @@ extension UserDefaults {
         set(id, forKey: "userid")
         synchronize()
     }
+    
+    func setEmail(email: String){
+        set(email, forKey: "email")
+        synchronize()
+    }
+    
+    func getEmail() -> String {
+        if let email = string(forKey: "email") {
+            return email
+        } else {
+            return ""
+        }
+    }
 }
