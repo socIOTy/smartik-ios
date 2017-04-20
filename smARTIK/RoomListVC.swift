@@ -26,10 +26,18 @@ class RoomListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         getMap()
 
     }
+
     
     override func viewWillAppear(_ animated: Bool) {
-        self.tabBarController?.navigationItem.rightBarButtonItem = nil
+        let addDevice = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addPressed))
+        
+        self.tabBarController?.navigationItem.rightBarButtonItem = addDevice
         self.tabBarController?.navigationItem.title = "Room List"
+        self.getMap()
+    }
+    
+    func addPressed() {
+        
     }
     
     func setBackgroundImage() {
@@ -70,6 +78,17 @@ class RoomListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerCell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell") as! HeaderCell
+        headerCell.sectionName.text = "Floor \(section+1)"
+        return headerCell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 60
+    }
+    
+    
     func getMap() {
         var header = HTTPHeaders()
         header = ["Authorization":"Basic \(UserDefaults.standard.getEmail().base64Encoded()!)"]
@@ -82,8 +101,6 @@ class RoomListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             
         })
     }
-    
-
 }
 
 
